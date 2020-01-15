@@ -1,0 +1,136 @@
+/*! == MEDIA QUERIES == */
+
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+		
+		@for $i from 1 through $col-count {
+			
+			.container.cols-#{$name}-#{$i} >div {
+				grid-column: span $i;
+			}
+		}
+	}
+}
+
+/*===========EXTRA LARGE (1600px)==========*/
+
+@media only screen and (max-width: 1600px) {
+/*body:before {
+  content: 'LARGE';
+  position: fixed;
+  z-index: 9999;
+  top:0;
+}*/
+ /*---GLOBALS---*/ 
+
+/*---HEADER---*/ 
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+
+}/*---end large mq---*/
+
+/*===========LARGE (1200px)==========*/
+
+@media only screen and (max-width: 1200px) {
+/*body:before {
+  content: 'LARGE';
+  position: fixed;
+  z-index: 9999;
+  top:0;
+}*/
+ /*---GLOBALS---*/ 
+
+/*---HEADER---*/ 
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+
+}/*---end large mq---*/
+
+
+/*===========MEDIUM (992px)==========*/
+
+@media only screen and (max-width: 992px) {
+/*  body:before {
+    content: 'MEDIUM';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+ /*---GLOBALS---*/ 
+
+body {
+    font-size: 0.9em;
+}
+ 
+ /*---HEADER---*/
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+  
+}/*---end medium mq---*/
+
+
+
+/*===========SMALL (768px)==========*/
+
+@media only screen and (max-width: 768px) {
+/*  body:before {
+    content: 'SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+
+/*---GLOBALS---*/
+
+body {
+  font-size: 0.8em;
+}
+
+/*---HEADER---*/
+
+
+/*---CONTENT---*/
+
+
+
+/*---FOOTER---*/
+
+
+
+}/*---end small mq---*/
+
+/*===========EXTRA SMALL (576px)==========*/
+
+@media only screen and (max-width: 576px) {
+/*  body:before {
+    content: 'EXTRA SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+/*---GLOBALS---*/
+
+body {
+  font-size: 0.7em;
+}
+
+/*---HEADER---*/
+
+
+/*---CONTENT---*/
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+  
+}/*---end extra small mq---*/
+

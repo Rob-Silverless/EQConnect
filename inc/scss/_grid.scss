@@ -1,0 +1,150 @@
+/*=====MASTER GRID RULES=====*/
+
+html,
+body {
+    min-height: 100vh;
+    margin:0;
+    padding: 0;
+}
+
+.container {
+    display:grid;
+    grid-template-columns: repeat($col-count, 1fr);
+    grid-gap:$grid-gap;
+    max-width: $container-width;
+    margin: 0 auto;
+
+    &.fullwidth {
+        max-width: none;
+    }
+
+    &.no-gutter {
+        grid-gap:0;
+    }
+    
+    &.no-gutter-r {
+        grid-row-gap:0;
+    }
+
+    &.no-gutter-c {
+        grid-column-gap:0;
+    }
+
+    &.align-horiz-l >div{
+        justify-self: flex-start;
+    }
+
+    &.align-horiz-c >div{
+        justify-self: center;
+    }
+
+    &.align-horiz-r >div{
+        justify-self: flex-end;
+    }
+
+    &.align-vert-t >div{
+        align-self: flex-start;
+    }
+
+    &.align-vert-c >div{
+        align-self: center;
+    }
+
+    &.align-vert-b >div{
+        align-self: flex-end;
+    }
+
+     > div {
+        grid-column: span 12;
+    }
+    
+    &.cols-2 > div {
+        grid-column: span 2;
+    }
+    
+    &.cols-3  > div {
+        grid-column: span 3;
+    }    
+
+    &.cols-4  > div {
+        grid-column: span 4;
+    }
+
+    &.cols-6 > div {
+        grid-column: span 6;
+    }
+    
+}
+
+.container {
+
+    .col {
+        width:100%;
+    }
+
+    .col {
+        &.align-horiz-l {
+            justify-self: flex-start;    
+        }
+        &.align-horiz-c {
+            justify-self: center;    
+        }   
+        &.align-horiz-r {
+            justify-self: flex-end;    
+        }     
+        &.align-vert-t {
+            align-self: flex-start;    
+        }
+        &.align-vert-c {
+            align-self: center;    
+        }   
+        &.align-vert-b {
+            align-self: flex-end;
+        }            
+    }
+}
+
+/*----Media Query LARGE (1200px)----*/
+@media only screen and (max-width: 1200px) {
+
+$distance: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20); // Amount string.
+$sides: (top, bottom, left, right); // Sides var 
+
+@each $amount in $distance {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}#{$amount} {
+            margin-#{$side}: #{$amount}em ;
+        }
+        }
+        }
+
+}/*END*/
+
+
+
+
+
+/*=====PROJECT GRID RULES=====*/
+
+/* New grid layouts follow this syntax:
+    
+&.cols-4-8 {
+    .col:nth-of-type(1n) {
+        grid-column: span 4;      
+    }
+    .col:nth-of-type(2n) {
+        grid-column: span 8;     
+    }    
+}
+
+*/
+  
+    
+    
+    
+    
+    
+    
+    
+
+
