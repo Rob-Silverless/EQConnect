@@ -20,7 +20,7 @@ body {
   font-family: "mr-eaves-modern", sans-serif;
   font-size: 1rem;
   font-weight: 200;
-  background: whitesmoke;
+  background: whitesmeqconnect;
   color: #50514d;
 }
 
@@ -562,7 +562,7 @@ footer .wrapper-hero {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  background: whitesmoke;
+  background: whitesmeqconnect;
 }
 
 .ticket:after {
@@ -580,7 +580,7 @@ footer .wrapper-hero {
       align-self: flex-end;
   background: #cfcfcf;
   border-radius: 10px 0 0 0;
-  border-bottom: 2px solid whitesmoke;
+  border-bottom: 2px solid whitesmeqconnect;
 }
 
 .ticket__title:after {
@@ -590,7 +590,7 @@ footer .wrapper-hero {
   top: 0;
   height: 100%;
   width: 10px;
-  border-right: 3px dotted whitesmoke;
+  border-right: 3px dotted whitesmeqconnect;
 }
 
 .ticket__places {
@@ -605,7 +605,7 @@ footer .wrapper-hero {
   padding: 1em 1em 0 1em;
   line-height: 1em;
   background: #cfcfcf;
-  border-bottom: 2px solid whitesmoke;
+  border-bottom: 2px solid whitesmeqconnect;
 }
 
 .ticket__places p {
@@ -625,7 +625,7 @@ footer .wrapper-hero {
   display: grid;
   background: #cfcfcf;
   border-radius: 0 10px 0 0;
-  border-bottom: 2px solid whitesmoke;
+  border-bottom: 2px solid whitesmeqconnect;
   padding: 1em 2em 1em 2em;
   -ms-flex-line-pack: end;
       align-content: flex-end;
@@ -992,7 +992,7 @@ footer .wrapper-hero {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  background: whitesmoke;
+  background: whitesmeqconnect;
 }
 
 .booking-panel:after {
@@ -1071,7 +1071,7 @@ footer .wrapper-hero {
   left: -1px;
   height: 100%;
   width: 5px;
-  border-left: 5px dotted whitesmoke;
+  border-left: 5px dotted whitesmeqconnect;
 }
 
 .exclusions-list p {
@@ -1998,13 +1998,13 @@ polygon#nepal {
   height: 30px;
 }
 
-.logo-holder #poulton {
+.logo-holder #eqconnect {
   opacity: 0.6;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
 
-.logo-holder #poulton path {
+.logo-holder #eqconnect path {
   fill: #cd381d;
 }
 
@@ -2026,7 +2026,7 @@ polygon#nepal {
   cursor: pointer;
 }
 
-.logo-holder:hover #poulton {
+.logo-holder:hover #eqconnect {
   opacity: 0.8;
 }
 

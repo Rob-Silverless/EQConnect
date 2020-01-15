@@ -1,16 +1,9 @@
 /*=====MASTER GRID RULES=====*/
 
-html,
-body {
-    min-height: 100vh;
-    margin:0;
-    padding: 0;
-}
-
 .container {
     display:grid;
     grid-template-columns: repeat($col-count, 1fr);
-    grid-gap:$grid-gap;
+    grid-gap: $grid-gap;
     max-width: $container-width;
     margin: 0 auto;
 
@@ -21,7 +14,7 @@ body {
     &.no-gutter {
         grid-gap:0;
     }
-    
+
     &.no-gutter-r {
         grid-row-gap:0;
     }
@@ -30,121 +23,117 @@ body {
         grid-column-gap:0;
     }
 
-    &.align-horiz-l >div{
+    &.gutter-sm {
+	    grid-gap: 1em;
+    }
+
+    &.align-horiz-l > .col {
         justify-self: flex-start;
     }
 
-    &.align-horiz-c >div{
+    &.align-horiz-c > .col {
         justify-self: center;
     }
 
-    &.align-horiz-r >div{
+    &.align-horiz-r > .col {
         justify-self: flex-end;
     }
 
-    &.align-vert-t >div{
+    &.align-vert-t > .col {
         align-self: flex-start;
     }
 
-    &.align-vert-c >div{
+    &.align-vert-c > .col {
         align-self: center;
     }
 
-    &.align-vert-b >div{
+    &.align-vert-b > .col {
         align-self: flex-end;
     }
 
-     > div {
+    > .col {
         grid-column: span 12;
     }
-    
-    &.cols-2 > div {
+
+    &.cols-2 > .col {
         grid-column: span 2;
     }
-    
-    &.cols-3  > div {
-        grid-column: span 3;
-    }    
 
-    &.cols-4  > div {
+    &.cols-3  > .col {
+        grid-column: span 3;
+    }
+
+    &.cols-4  > .col {
         grid-column: span 4;
     }
 
-    &.cols-6 > div {
+    &.cols-6 > .col {
         grid-column: span 6;
     }
-    
+
+    &.cols-12 > .col {
+        grid-column: span 12;
+    }
+
 }
 
 .container {
 
-    .col {
+    > .col {
         width:100%;
     }
 
-    .col {
+    > .col {
         &.align-horiz-l {
-            justify-self: flex-start;    
+            justify-self: flex-start;
         }
         &.align-horiz-c {
-            justify-self: center;    
-        }   
+            justify-self: center;
+        }
         &.align-horiz-r {
-            justify-self: flex-end;    
-        }     
+            justify-self: flex-end;
+        }
         &.align-vert-t {
-            align-self: flex-start;    
+            align-self: flex-start;
         }
         &.align-vert-c {
-            align-self: center;    
-        }   
+            align-self: center;
+        }
         &.align-vert-b {
             align-self: flex-end;
-        }            
+        }
     }
 }
-
-/*----Media Query LARGE (1200px)----*/
-@media only screen and (max-width: 1200px) {
-
-$distance: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20); // Amount string.
-$sides: (top, bottom, left, right); // Sides var 
-
-@each $amount in $distance {
-    @each $side in $sides {
-        .m#{str-slice($side, 0, 1)}#{$amount} {
-            margin-#{$side}: #{$amount}em ;
-        }
-        }
-        }
-
-}/*END*/
-
-
-
-
 
 /*=====PROJECT GRID RULES=====*/
 
-/* New grid layouts follow this syntax:
-    
-&.cols-4-8 {
-    .col:nth-of-type(1n) {
-        grid-column: span 4;      
+.container {
+
+&.cols-2-8-2 {
+    .col:nth-of-type(3n - 2) {
+        grid-column: span 2;
     }
-    .col:nth-of-type(2n) {
-        grid-column: span 8;     
-    }    
+    .col:nth-of-type(3n - 1) {
+        grid-column: span 8;
+    }
+    .col:nth-of-type(3n) {
+        grid-column: span 2;     
+    }
 }
 
-*/
-  
-    
-    
-    
-    
-    
-    
-    
+}
 
+/*===========MEDIA QUERIES==========*/
 
+@each $name, $size in $breakpoints {
+
+	@media (max-width: #{$size}) {
+
+		@for $i from 1 through $col-count {
+
+			.container.cols-#{$name}-#{$i} > .col {
+				grid-column: span $i;
+			}
+		}
+	}
+}

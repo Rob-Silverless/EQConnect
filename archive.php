@@ -1,18 +1,14 @@
 <?php
 /**
  *
- * @package poulton
+ * @package eqconnect
  */
 get_header();?>
 
-    <div class="container">
-
-        <div class="row">
-	        
-ARCHIVE
-
-        </div><!--row-->
+<div class="container">
         
-    </div><!--container-->
+ARCHIVE
     
-    <?php get_footer();?>
+</div><!--container-->
+
+<?php get_footer();?>

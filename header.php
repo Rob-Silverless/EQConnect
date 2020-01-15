@@ -1,14 +1,6 @@
-<?php
-/**
- * Header
- *
- * @package poulton
- */
-
-?>
+<?php /** Header @package eqconnect */ ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-    
 <head>
 
 <meta charset="UTF-8">
@@ -16,16 +8,10 @@
 <meta name="keywords" content=" ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Connect & Seal | Poulton Technologies</title>
+<title>eqconnect Master Theme</title>
 
 <link rel="stylesheet" href="https://use.typekit.net/dmz2ckm.css"><!--TYPEKIT INJECT-->
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"><!-- Font Awesome CDN-->
-
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
-
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.0/mapbox-gl-geocoder.css' type='text/css' />
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
 <?php wp_head(); ?>
@@ -34,23 +20,50 @@
 
 <body <?php body_class(); ?>>
 
-    <div id="page" class="site-wrapper">
-	    
-	    <main><!--closes in footer.php-->
-	    
-	    <nav id="nav">
+	<div id="page" class="site-wrapper">
 
-			<div class="menu-collapse">
-			
-				<div class="wrapper-menu">
-					<?php
-					    wp_nav_menu( array(
-					    'theme_location' => 'main-menu',
-					    'container_class' => 'mainMenu' ) );
-					?>
-				</div>
-			
-			</div>
+<header>
+    <nav id="nav">
+        <div class="container cols-2-8-2">
+            <div class="col">
+                <div class="menu-trigger">
+                    MENU TRIGGER
+                </div>
+            </div>
+            <div class="col align-center">
+                LOGO
+            </div>
+            <div class="col">
 
-	    </nav>
-	    
+            </div>
+        </div>
+    </nav>
+    <div class="on-page-nav">
+        <div class="container">
+            <div class="col">
+                <div class="menu">
+                    <button type="button" name="button" id="prevSection">PREVIOUS!</button>
+                    <ul id="myMenu">
+                    	<li><a href="#first">First section</a></li>
+                    	<li><a href="#second">Second section</a></li>
+                    	<li><a href="#third">Third section</a></li>
+                    	<li><a href="#fourth">Fourth section</a></li>
+                    </ul>
+                    <button type="button" name="button" id="nextSection">NEXT!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="offscreen-nav">
+    <?php
+    wp_nav_menu(array(
+        'theme_location'  => 'main-menu',
+        'container_class' => 'mainMenu'
+    ));
+    ?>
+</div>
+
+
+		<main><!--closes in footer.php-->

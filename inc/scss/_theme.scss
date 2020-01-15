@@ -1,0 +1,38 @@
+/*! == THEME STYLES == */
+/*===========GLOBAL==========*/
+/*===========HEADER==========*/
+.offscreen-nav {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background: red;
+    transition:left 0.5s ease;
+    &.show {
+        left:0;
+    }
+}
+
+.on-page-nav {
+    position: relative;
+    margin-top: 5em;
+    .menu {
+        position: absolute;
+        height:calc(100vh - 10em);
+        background: blue;
+    }
+}
+
+.image-frame {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: red;
+    height: 20vh;
+}
+
+/*===========BODY==========*/
+/*===========FOOTER==========*/

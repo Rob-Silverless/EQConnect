@@ -1,5 +1,6 @@
 <?php
 /**
+ * ============== Template Name: Home Page
  *
  * @package eqconnect
  */
@@ -13,6 +14,6 @@ get_header();?>
 
 <div class="container">
 
-</div><!--container-->
+</div>
 
 <?php get_footer();?>

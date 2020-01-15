@@ -2,17 +2,19 @@
 /**
  * ============== Template Name: Terms and Privacy
  *
- * @package poulton
+ * @package eqconnect
  */
 get_header();?>
 
+<!-- ******************* Hero Content ******************* -->
+
 <?php get_template_part("template-parts/hero"); ?>
 
-<div class="content-page standard pr5 pl5 pb8">
+<!-- ******************* Hero Content END ******************* -->
 
-	<?php get_template_part("template-parts/bell-logo"); ?>
+<div class="container">
 	
-	<h1 class="heading heading__lg heading__light slow-fade mt2 page-title"><?php the_field("hero_heading"); ?></h1>
+	<h1 class="heading heading__lg slow-fade mt2"><?php the_field("hero_heading"); ?></h1>
 	
 	<div class="wrapper-content">
 		
