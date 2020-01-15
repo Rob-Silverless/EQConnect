@@ -34,6 +34,9 @@ add_filter('menu_order', 'eqconnect_reorder_menu');
 /* Remove Comments Link */
 add_action('wp_before_admin_bar_render', 'eqconnect_manage_admin_bar');
 
+/* Remove Admin Bar */
+add_action('after_setup_theme', 'eqconnect_remove_admin_bar');
+
 
 /****************************************************/
 /*                     Functions                     /
@@ -102,4 +105,8 @@ function eqconnect_reorder_menu() {
 function eqconnect_manage_admin_bar(){
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('comments');
+}
+ 
+function eqconnect_remove_admin_bar() {
+	show_admin_bar(false);
 }

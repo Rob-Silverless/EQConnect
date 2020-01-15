@@ -6,7 +6,11 @@
     grid-gap: $grid-gap;
     max-width: $container-width;
     margin: 0 auto;
-
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+    &.grid-gap {
+        grid-gap:2em;
+    }
     &.fullwidth {
         max-width: none;
     }
@@ -35,16 +39,16 @@
         justify-self: center;
     }
 
-    &.align-horiz-r > .col {
-        justify-self: flex-end;
+    &.align-horiz-r {
+        justify-content: flex-end;
     }
 
     &.align-vert-t > .col {
         align-self: flex-start;
     }
 
-    &.align-vert-c > .col {
-        align-self: center;
+    &.align-vert-c{
+        align-items: center;
     }
 
     &.align-vert-b > .col {
@@ -74,7 +78,33 @@
     &.cols-12 > .col {
         grid-column: span 12;
     }
+    @for $grid from 1 to $col-count {
 
+        &.cols-#{$grid} > .col{
+            grid-column: span $grid;
+        }
+    }
+
+    @for $gridOffset from 1 to $col-count {
+        @for $grid from 1 to $col-count {
+            &.cols-offset-#{$gridOffset}-#{$grid} > .col{
+                grid-column-start:($gridOffset + 1);
+                grid-column-end:(($gridOffset + 1) + $grid);
+            }
+        }
+    }
+    @for $gridColumnOne from 1 to $col-count {
+        @for $gridColumnTwo from 1 to $col-count {
+            &.cols-#{$gridColumnOne}-#{$gridColumnTwo}{
+                > .col:nth-of-type(2n -1) {
+                    grid-column: span $gridColumnOne;     
+                }       
+                > .col:nth-of-type(2n) {
+                    grid-column: span $gridColumnTwo;     
+                } 
+            }
+        }
+    }
 }
 
 .container {

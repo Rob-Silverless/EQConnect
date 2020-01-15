@@ -1,38 +1,78 @@
 /*! == THEME STYLES == */
 /*===========GLOBAL==========*/
 /*===========HEADER==========*/
-.offscreen-nav {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100vw;
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    background: red;
-    transition:left 0.5s ease;
-    &.show {
-        left:0;
+#eq_connect_logo{
+    path{
+        fill: white;
+    }
+    #Path_1, #Path_2{
+        fill: none;
+    }
+    &:hover{
+        path{
+            fill: $brand-secondary;
+            transition: $fastEffect;
+        }
+        #Path_1, #Path_2{
+            fill: none;
+            stroke: $brand-secondary;
+            transition: $fastEffect;
+        }
     }
 }
-
-.on-page-nav {
-    position: relative;
-    margin-top: 5em;
-    .menu {
-        position: absolute;
-        height:calc(100vh - 10em);
-        background: blue;
+#logo{
+    a{
+        &:hover{
+            #eq_connect_logo{
+                path{
+                    fill: $brand-secondary;
+                    transition: $fastEffect;
+                }
+                #Path_1, #Path_2{
+                    fill: none;
+                    stroke: $brand-secondary;
+                    transition: $fastEffect;
+                }
+            }
+        }
     }
 }
-
-.image-frame {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    background: red;
-    height: 20vh;
+#nav{
+    .mainMenu{
+        display: flex;
+        justify-content: flex-end;
+        ul{
+            li{
+                display:inline-block;
+                position:relative;
+                a{
+                    display:block;
+                    padding:rem-calc(10) rem-calc(20);
+                }
+                &:after{
+                    content:'';
+                    display:block;
+                    transition: $fastEffect;
+                    border-bottom:2px solid $brand-secondary;
+                    transform-origin:center;
+                    position:absolute;
+                    bottom:0;
+                    left:50%;
+                    right:50%;
+                }
+                &:hover{
+                    a{
+                        color: $brand-secondary
+                    }
+                    &:after{
+                        transition: $fastEffect;
+                        left:0;
+                        right:0;
+                    }
+                }
+            }
+        }
+    }
 }
-
 /*===========BODY==========*/
 /*===========FOOTER==========*/

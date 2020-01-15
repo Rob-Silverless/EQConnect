@@ -81,3 +81,45 @@
 @mixin darkCircularGradient {
     background: radial-gradient(ellipse at center, hsl(0, 0%, 60%) 0%,hsl(0, 0%, 19%) 100%);
 }
+
+
+
+@function rem-calc($size) {
+  $remSize: $size / $fontDefault;
+  @return #{$remSize}rem;
+}
+
+@each $heading, $size in $headingSizes {
+    #{$heading}, .#{$heading} {
+        font-size: rem-calc($size);
+        text-transform: $headingTransform
+    }
+}
+
+@mixin gridOffset($grid-start, $grid-end) {
+    > .col{
+        grid-column-start:($grid-start - 1);     
+        grid-column-end:($grid-start + $grid-end); 
+    }
+}
+
+@mixin gridTwoCol($grid-one, $grid-two) {
+    > .col:nth-of-type(2n - 1){
+        grid-column: span $grid-one; 
+    }
+    > .col:nth-of-type(2n){
+        grid-column: span $grid-two; 
+    }
+}
+
+@mixin gridThreeCol($grid-one, $grid-two, $grid-three) {
+    > .col:nth-of-type(3n - 2){
+        grid-column: span $grid-one; 
+    }
+    > .col:nth-of-type(3n -1){
+        grid-column: span $grid-two; 
+    }
+    > .col:nth-of-type(3n){
+        grid-column: span $grid-three; 
+    }
+}

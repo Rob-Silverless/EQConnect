@@ -24,7 +24,7 @@
 
 <header>
     <nav id="nav">
-        <div class="container cols-2-8-2">
+        <!--<div class="container cols-2-8-2">
             <div class="col">
                 <div class="menu-trigger">
                     MENU TRIGGER
@@ -36,34 +36,34 @@
             <div class="col">
 
             </div>
-        </div>
-    </nav>
-    <div class="on-page-nav">
-        <div class="container">
+        </div>-->
+        <div class="container cols-6-18 align-vert-c">
+            <div class="col" id="logo">
+                <a href="<?php echo get_home_url(); ?>">
+                    <?php get_template_part("template-parts/logo"); ?>
+                </a>
+            </div>
             <div class="col">
-                <div class="menu">
-                    <button type="button" name="button" id="prevSection">PREVIOUS!</button>
-                    <ul id="myMenu">
-                    	<li><a href="#first">First section</a></li>
-                    	<li><a href="#second">Second section</a></li>
-                    	<li><a href="#third">Third section</a></li>
-                    	<li><a href="#fourth">Fourth section</a></li>
-                    </ul>
-                    <button type="button" name="button" id="nextSection">NEXT!</button>
-                </div>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location'  => 'main-menu',
+                    'container_class' => 'mainMenu'
+                ));
+                ?>
             </div>
         </div>
-    </div>
+    </nav>
 </header>
 
+<!--
 <div class="offscreen-nav">
-    <?php
+    <?php /*
     wp_nav_menu(array(
         'theme_location'  => 'main-menu',
         'container_class' => 'mainMenu'
-    ));
+    )); */
     ?>
 </div>
-
+-->
 
 		<main><!--closes in footer.php-->

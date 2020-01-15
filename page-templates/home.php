@@ -6,14 +6,11 @@
  */
 get_header();?>
 
-<!-- ******************* Hero Content ******************* -->
-
-<?php get_template_part("template-parts/hero"); ?>
-
-<!-- ******************* Hero Content END ******************* -->
-
-<div class="container">
-
+<div id="fullpage">
+	<div class="section">Some section</div>
+	<div class="section">Some section</div>
+	<div class="section">Some section</div>
+	<div class="section">Some section</div>
 </div>
 
 <?php get_footer();?>
