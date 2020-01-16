@@ -66,8 +66,8 @@ main {
 }
 
 p {
-    font-size: 1em;
-    line-height: 1.3em
+    font-size: $fontSize;
+    line-height: $fontSize * 1.2;
 }
 
 a {

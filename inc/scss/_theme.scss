@@ -1,5 +1,21 @@
 /*! == THEME STYLES == */
 /*===========GLOBAL==========*/
+h1,
+h2,
+.h1,
+.h2{
+    text-transform: uppercase;
+    line-height: 0.6;
+    font-weight: 700;
+}
+h1, .h1{
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}
+.h1,
+.h2{
+    margin-bottom: rem-calc(30);
+}
 /*===========HEADER==========*/
 #eq_connect_logo{
     path{
@@ -75,4 +91,34 @@
     }
 }
 /*===========BODY==========*/
+.blockquote{
+    p{
+        position:relative;
+        padding-bottom:rem-calc(20);
+        &:after{
+            width: rem-calc(15);
+            height: 1px;
+            background-color:white;
+            content: '';
+            display: block;
+            position:absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    span{
+        color: $brand-secondary;
+    }
+}
+.three-points-number{
+    font-size:rem-calc(150);
+    -webkit-text-stroke: 1px $brand-secondary;
+    color: transparent;
+
+}
+.challenge{
+    background-position:center right;
+    background-repeat:no-repeat;
+    background-size:50%;
+}
 /*===========FOOTER==========*/
