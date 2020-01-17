@@ -56,7 +56,7 @@
     }
 
     > .col {
-        grid-column: span 12;
+        grid-column: span $col-count;
     }
 
     &.cols-2 > .col {

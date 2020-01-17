@@ -45,6 +45,7 @@ add_action('after_setup_theme', 'eqconnect_remove_admin_bar');
 function eqconnect_scripts() {
 	wp_enqueue_style( 'eqconnect-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'eqconnect-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
+	wp_enqueue_script( 'eqconnect-owl-js', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array('jquery'), true);
 }
 
 function eqconnect_custom_menu() {

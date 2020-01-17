@@ -15,6 +15,7 @@ h1, .h1{
 .h1,
 .h2{
     margin-bottom: rem-calc(30);
+    line-height: 1;
 }
 /*===========HEADER==========*/
 #eq_connect_logo{
@@ -120,5 +121,50 @@ h1, .h1{
     background-position:center right;
     background-repeat:no-repeat;
     background-size:50%;
+}
+.data{
+    background-position:bottom left;
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+.news{
+    .news-image{
+        width: 100%;
+        padding-bottom: 75%;
+    }
+    h3{
+        font-size: rem-calc(20);
+        font-weight: 200;
+        margin-bottom:rem-calc(5);
+    }
+    .date{
+        font-size:rem-calc(12);
+        display: block;
+        &:after{
+            display: block;
+            content: '';
+            height: 1px;
+            width: 10px;
+            background-color:white;
+            margin-top: rem-calc(15);
+        }
+    }
+}
+.brands{
+    margin-top:rem-calc(50);
+    padding-left:0;
+    padding-right:0;
+    img{
+        height: rem-calc(50);
+    }
+}
+.testimonial{
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:100%;
+    .testimonial-container{
+        background-color:rgba(black, 0.9);
+        padding:rem-calc(20);
+    }
 }
 /*===========FOOTER==========*/
