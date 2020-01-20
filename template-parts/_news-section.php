@@ -1,10 +1,9 @@
-
-<div class="section news">
+<div class="section news" id="news">
 	<div class="container cols-24">
 		<div class="col">
 			<div class="h1"><?php the_sub_field('title')?></div>
 			<div class="h2"><?php the_sub_field('sub_title')?></div>
-			<div class="owl-carousel owl-theme">
+			<div class="owl-carousel owl-theme" id="news-carousel">
 			<?php
 			    $args = array(
 			      'post_type' => 'post',
@@ -19,9 +18,15 @@
 					?>
  					<div>
  						<div class="news-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
- 						<h3><?php the_field('title');?></h3>
- 						<span class="date"><?php echo get_the_date('d.m.y');?></span>
- 						<p><?php the_field('excerpt');?></p>
+	 						<div class="news-content">
+	 						<h3><?php the_field('title');?></h3>
+	 						<span class="date"><?php echo get_the_date('d.m.y');?></span>
+	 						<p><?php the_field('excerpt');?></p>
+	 					</div>
+	 					<a href="" class="news-link" target="_blank">
+	 						Open Article<br/>
+	 						<span>Opens in a new window</span>
+	 					</a>
  					</div>
 
  				<?php endwhile; wp_reset_query();?>

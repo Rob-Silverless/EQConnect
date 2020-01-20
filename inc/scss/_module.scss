@@ -26,8 +26,6 @@
 .owl-nav {
 	position: absolute;
 	display: block;
-	top: 50%;
-	width: 100%;
 	z-index: 1;
 	
 	.owl-prev, .owl-next {
@@ -35,7 +33,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		transition: filter 0.3s ease;
-		
+		transition:$fastEffect;
 		span {
 			display: none;
 		}
@@ -46,40 +44,29 @@
 		
 		&:before {
 			content: "";
-			background: url("inc/img/arrow-shape.svg");
+			background: url("inc/img/news-arrow.svg");
 			@include backgroundContain;
 			position: absolute;
-			width: 2em;
-			height: 2em;
 			cursor: pointer;
 		}
-		
-		&:hover {
-			filter: brightness(70%);
+		&:hover{
+			filter: brightness(0.7);
 		}
 	}
 	
 	.owl-prev {
-		left: 0;
-		
-		&:before {
-			right: 2em;
-			transform: translateY(-50%) rotate(90deg);
+		left: rem-calc(-50);
+		&:before{
+			transform:translateX(-50%) rotate(180deg);
 		}
 	}
 	
 	.owl-next {
-		right: 0;
-		
-		&:before {
-			left: 2em;
-			transform: translateY(-50%) rotate(-90deg);
+		right: rem-calc(-50);
+		&:before{
+			transform:translateX(-50%)
 		}
 	}
-}
-
-.owl-dots {
-	display: none;
 }
 
 .wrapper-image {

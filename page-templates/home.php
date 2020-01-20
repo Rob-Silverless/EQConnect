@@ -22,16 +22,10 @@ get_header();?>
 		<?php get_template_part("template-parts/_three-points-section"); ?>
 	<?php endwhile; endif;?>
 
-	<?php if( have_rows('challenge_section') ):
-	while( have_rows('challenge_section') ): the_row();?>
-		<?php get_template_part("template-parts/_challenge-section"); ?>
-	<?php endwhile; endif;?>
-
 	<?php if( have_rows('data_section') ):
 	while( have_rows('data_section') ): the_row();?>
 		<?php get_template_part("template-parts/_data-section"); ?>
 	<?php endwhile; endif;?>
-
 
 	<?php if( have_rows('news_section') ):
 	while( have_rows('news_section') ): the_row();?>
@@ -47,6 +41,17 @@ get_header();?>
 	while( have_rows('testimonial_section') ): the_row();?>
 		<?php get_template_part("template-parts/_testimonial-section"); ?>
 	<?php endwhile; endif;?>
+
+	<?php if( have_rows('who_we_are_section') ):
+	while( have_rows('who_we_are_section') ): the_row();?>
+		<?php get_template_part("template-parts/_who-we-are-section"); ?>
+	<?php endwhile; endif;?>
+
+	<?php if( have_rows('contact_us_section') ):
+	while( have_rows('contact_us_section') ): the_row();?>
+		<?php get_template_part("template-parts/_contact-us-section"); ?>
+	<?php endwhile; endif;?>
+
 </div>
 
 <?php get_footer();?>

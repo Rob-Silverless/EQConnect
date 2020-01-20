@@ -4,16 +4,16 @@
 
 $brand-primary: black;
 $brand-secondary: hsl(188, 74%, 55%); //Blue
-$brand-tertiary: hsl(37, 100%, 50%);
+$brand-tertiary: hsl(188, 74%, 55%); //Light Blue
 $brand-light-grey: hsl(0, 0%, 96%);
 $brand-mid-grey: hsl(0, 0%, 50%);
 $brand-dark-grey: hsl(0, 0%, 20%);
 $body-bg: $brand-primary;
 $white: hsl(0, 0%, 100%);
 
-$brand-font: "lato", serif;
-$body-font: "lato", sans-serif;
-$supporting-font: "lato", sans-serif;
+$brand-font: zeitung, serif;
+$body-font: zeitung, sans-serif;
+$supporting-font: zeitung, sans-serif;
 
 $fontSize: 1rem;
 
@@ -44,7 +44,7 @@ $hyperlinkColor: $brand-secondary;
 $headingTransform: uppercase;
 $headingSizes: (
   h1: 48,
-  h2: 48,
+  h2: 40,
   h3: 32,
   h4: 26,
   h5: 22,

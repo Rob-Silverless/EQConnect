@@ -18,8 +18,9 @@ body {
 body {
     font-family: $body-font;
     font-size: $fontSize;
-    font-weight: 200;
+    font-weight: 300;
     background: $body-bg;
+    line-height:1.2;
     color: white;
 }
 
@@ -67,19 +68,19 @@ main {
 
 p {
     font-size: $fontSize;
-    line-height: $fontSize * 1.2;
+    line-height: 1.6;
 }
 
 a {
     display: inline-block;
     line-height: 1.2em;
-    color: $brand-primary;
+    color: $brand-secondary;
     transition:color 0.3s ease;
     text-decoration: none;
 
     &:hover {
         text-decoration: none;
-        color: $brand-dark-grey;
+        color: rgba($brand-secondary, 0.8);
     }
 
     i {
@@ -313,19 +314,22 @@ nav {
 /*===========FOOTER==========*/
 
 footer {
+    position:fixed;
+    bottom:0;
+    width:100%;
 
 	a {
-		color: $brand-tertiary;
+		color: white;
 
 		&:hover {
-			color: white;
+			color: $brand-secondary;
 		}
 	}
 
 	.pre-socket {
 		padding: 2em 1em;
-		background: $brand-primary;
-		color: $brand-tertiary;
+		background: black;
+		color: white;
 
 		.socials a {
 		    color: $brand-light-grey;
@@ -341,13 +345,12 @@ footer {
 	}
 
 	.socket {
-		letter-spacing: 1px;
-		background: $brand-dark-grey;
-		color: $brand-tertiary;
+		background: black;
+		color: white;
 		padding: 1em;
 
 		.colophon, .mandatory {
-			font-size: 0.9em;
+			font-size: rem-calc(12);
 			display: flex;
 			align-items: center;
 		}

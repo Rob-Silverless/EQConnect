@@ -9,17 +9,15 @@
 
 <footer class="footer">
 
-	<div class="pre-socket"></div><!--pre-socket-->
-
 	<div class="socket">
 
-		<div class="container cols-4">
+		<div class="container cols-8">
 
-			<div class="col colophon">&copy; eqconnect Master Theme <?php echo date ('Y');?></div>
+			<div class="col colophon">&copy; EQ Connect <?php echo date ('Y');?></div>
 
-			<div class="col eqconnect">
+			<div class="col silverless">
 
-				<a href="https://eqconnect.co.uk"><?php get_template_part('inc/img/eqconnect', 'logo');?></a>
+				<a href="https://silverless.co.uk"><?php get_template_part('inc/img/silverless', 'logo');?></a>
 
 			</div>
 

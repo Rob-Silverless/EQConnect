@@ -1,5 +1,11 @@
-<div class="section">
-	<div class="container cols-8 grid-gap">
+<div class="section three-points" id="challenge">
+	<div class="container">
+		<div class="col">
+			<h1><?php the_sub_field('title');?></h1>
+			<h2><?php the_sub_field('sub_title');?></h2>
+		</div>
+	</div>
+	<div class="container cols-8 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -15,9 +21,22 @@
 
 		</div>
 	</div>
+	<div class="container cols-12">
+		<div class="col">
+			<?php the_sub_field('content');?>
+		</div>
+	</div>
 </div>
-<div class="section">
-	<div class="container cols-8 grid-gap">
+
+
+<div class="section three-points">
+	<div class="container">
+		<div class="col">
+			<h1><?php the_sub_field('title');?></h1>
+			<h2><?php the_sub_field('sub_title');?></h2>
+		</div>
+	</div>
+	<div class="container cols-8 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -38,9 +57,22 @@
 
 		</div>
 	</div>
+	<div class="container cols-12">
+		<div class="col">
+			<?php the_sub_field('content');?>
+		</div>
+	</div>
 </div>
-<div class="section">
-	<div class="container cols-8 grid-gap">
+
+
+<div class="section three-points">
+	<div class="container">
+		<div class="col">
+			<h1><?php the_sub_field('title');?></h1>
+			<h2><?php the_sub_field('sub_title');?></h2>
+		</div>
+	</div>
+	<div class="container cols-8 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -64,6 +96,11 @@
 			<div>
 				<?php the_sub_field('third_block')?>
 			</div>
+		</div>
+	</div>
+	<div class="container cols-12">
+		<div class="col">
+			<?php the_sub_field('content');?>
 		</div>
 	</div>
 </div>

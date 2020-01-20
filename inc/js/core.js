@@ -3,21 +3,18 @@
 jQuery(document).ready(function( $ ) {
 
     new fullpage('#fullpage', {
-
+    	anchors:['challenge'],
         onLeave: function(origin, destination, direction){
     		var leavingSection = this;
     		//after leaving section 1
     		if(origin.index == 0 && direction =='down'){
     			$('html').addClass('sssss');
     		}
+    		console.log(origin.index);
     	}
     });
 
-    $(document).on('click', '#prevSection', function(){
-      fullpage_api.moveSectionUp();
-    });
-
-    $(document).on('click', '#nextSection', function(){
+    $('#mouse-scroll-anchor').on('click', function(){
       fullpage_api.moveSectionDown();
     });
 
@@ -31,14 +28,14 @@ jQuery(document).ready(function( $ ) {
 
 //Smooth Scroll
 
-    $('nav a, a.button, a.next-section').click(function(){
+    /*$('nav a, a.button, a.next-section').click(function(){
 	    if($(this).attr('href') != "#") {
 	        $('html, body').animate({
 	            scrollTop: $( $(this).attr('href') ).offset().top -100
 	        }, 500);
 	        return false;
 	    }
-    });
+    });*/
 
 /* LOAD MAP */
 
@@ -221,19 +218,46 @@ jQuery(document).ready(function( $ ) {
 	});
 
 
-$(".owl-carousel").owlCarousel({
+// CAROUSELS
+
+$("#news-carousel").owlCarousel({
     margin:20,
     nav:true,
+    slideBy: 4,
     responsive:{
         0:{
             items:1
         },
         600:{
-            items:3
+            items:2
         },
         1000:{
             items:4
         }
     }
 })
+
+$("#dataCarousel").owlCarousel({
+	items: 1,
+    nav:false,
+    loop:true,
+    margin:20,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout:7000,
+    autoplaySpeed: 2000,
+    dotsEach:true,
+})
+
+$("#testimonialCarousel").owlCarousel({
+	items: 1,
+    nav:true,
+    loop:true,
+    autoplay: false,
+    autoHeight: true,
+})
+
+$('#dataCarousel .owl-dot').each(function(){
+$(this).children('span').text($(this).index()+1);
+});
 });//Don't remove ---- end of jQuery wrapper
