@@ -13,7 +13,7 @@
 			<div class="container cols-8">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
-					<div class="col person">
+					<div class="col person" data-individual="individual-<?php echo get_row_index(); ?>">
 						<div class="person_profile">
 							<?php if( get_field('profile_image') ): ?>
 								<?php 
@@ -24,7 +24,7 @@
 								<?php get_template_part("inc/img/profile-image"); ?>
 							<?php endif; ?>
 						</div>
-						<div class="person_name"><?php the_sub_field('name')?></div>
+						<div class="person_name"><?php the_sub_field('name')?> <?php the_sub_field('surname')?></div>
 						<div class="job_title"><?php the_sub_field('job_title')?></div>
 					</div>
 				<?php endwhile; endif;?>
@@ -38,36 +38,42 @@
 		</div>
 	</div>
 
+<?php if( have_rows('person') ):
+	while( have_rows('person') ): the_row();?>
 
-
-	<div class="individual">
+	<div class="individual" id="individual-<?php echo get_row_index(); ?>">
 		<div class="container cols-10-14">
 			<div class="col image">
-				<img src="<?php echo get_template_directory_uri(); ?>/inc/img/profile-image-lg.png"/>
+				<?php if( get_field('profile_image') ): ?>
+					<?php 
+						$image = get_sub_field('profile_image');
+					?>
+					<img src="<?php echo esc_url($profile_image['url']); ?>" />
+				<?php else: ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/inc/img/profile-image-lg.png"/>
+				<?php endif; ?>
 			</div>
 			<div class="col info">
 				<a class="close" href="#">x</a>
 				<div class="content-name">
 					<div class="name h3">
 						<div>
-							Will
+							<?php the_sub_field('name')?>
 						</div>
 						<div>
-							Mace
+							<?php the_sub_field('surname')?>
 						</div>
 					</div>
 					<div class="role-title">
-						CEO
+						<?php the_sub_field('job_title')?>
 					</div>
 				</div>
 				<div class="role-description">
-					<ul>
-						<li>MBA - Judge Business School, Cambridge</li>
-						<li>5 years Head of Innovation @ Kindred</li>
-						<li>10 years British Arm, 5 years Banking</li>
-					</ul>
+					<?php the_sub_field('information')?>
 				</div>
 			</div>
 		</div>
 	</div>
+<?php endwhile; endif;?>
+
 </div>

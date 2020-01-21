@@ -3,20 +3,42 @@
 jQuery(document).ready(function( $ ) {
 
     new fullpage('#fullpage', {
-    	anchors:['challenge'],
+    	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
+    	afterLoad: function (anchorLink, index){
+    	},
         onLeave: function(origin, destination, direction){
     		var leavingSection = this;
     		//after leaving section 1
     		if(origin.index == 0 && direction =='down'){
     			$('html').addClass('sssss');
     		}
-    		console.log(origin.index);
+    		console.log(origin.index, destination, direction);
+    		if(destination.anchor == 'awareness'){
+    			$('#awarenessSection').addClass('activeSection');
+    		}
     	}
     });
 
     $('#mouse-scroll-anchor').on('click', function(){
       fullpage_api.moveSectionDown();
     });
+
+    
+
+    //var position = $(window).scrollTop(); 
+
+	// should start at 0
+
+	/*$(window).scroll(function() {
+	    var scroll = $(window).scrollTop();
+	    if(scroll > position) {
+	        console.log('scrollDown');
+	    } else {
+	         console.log('scrollUp');
+	    }
+	    position = scroll;
+	});*/
+
 
 /* ADD CLASS ON LOAD*/
 
@@ -259,5 +281,16 @@ $("#testimonialCarousel").owlCarousel({
 
 $('#dataCarousel .owl-dot').each(function(){
 $(this).children('span').text($(this).index()+1);
+});
+
+// Who we are section
+
+$('.person').on('click', function(){
+	var personId = $(this).attr('data-individual');
+	$('#' + personId).fadeIn();
+});
+$('.individual .close').on('click', function(e){
+	e.preventDefault();
+	$('.individual').fadeOut();
 });
 });//Don't remove ---- end of jQuery wrapper

@@ -1,6 +1,6 @@
 <div class="section heading" id="home">
 	<div class="container cols-13-11 align-vert-c">
-		<div class="col">
+		<div class="col headerContent">
 			<?php 
 				$fundedBy = get_sub_field('funded_by');
 			?>
@@ -19,11 +19,11 @@
 				</div>
 			<?php endwhile; endif;?>
 		</div>
-		<div class="col">
+		<div class="col headerImage">
 			<?php 
 				$image = get_sub_field('image');
 			?>
-			<img src="<?php echo esc_url($image['url']); ?>" />
+			<img src="<?php echo esc_url($image['url']); ?>" id="headerSpin" />
 		</div>
 	</div>
 	<div id="mouse-scroll-anchor">

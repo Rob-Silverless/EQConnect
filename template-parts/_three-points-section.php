@@ -1,4 +1,4 @@
-<div class="section three-points" id="challenge">
+<div class="section three-points" id="challenge1">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
@@ -29,7 +29,7 @@
 </div>
 
 
-<div class="section three-points">
+<div class="section three-points" id="challenge2">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
@@ -65,7 +65,7 @@
 </div>
 
 
-<div class="section three-points">
+<div class="section three-points" id="challenge3">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
