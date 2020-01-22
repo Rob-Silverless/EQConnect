@@ -1,8 +1,14 @@
 //@prepros-prepend fullpage.min.js
+//@prepros-prepend fullpage.fadingEffect.min.js
+//@prepros-prepend scrolloverflow.min.js
 
 jQuery(document).ready(function( $ ) {
 
     new fullpage('#fullpage', {
+    	licenseKey: '16F37769-414746C6-910FC81C-EA289CE3',
+    	//fadingEffectKey: '33F499EA-4AAC4488-AA15BEAD-F13978F8',
+    	//fadingEffect: 'section',
+        scrollOverflow: true,
     	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
     	afterLoad: function (anchorLink, index){
     	},
@@ -12,9 +18,26 @@ jQuery(document).ready(function( $ ) {
     		if(origin.index == 0 && direction =='down'){
     			$('html').addClass('sssss');
     		}
-    		console.log(origin.index, destination, direction);
     		if(destination.anchor == 'awareness'){
     			$('#awarenessSection').addClass('activeSection');
+    		} else if(destination.anchor == 'challengeOne'){
+    			$('#challenge1').addClass('activeSection');
+    		} else if(destination.anchor == 'challengeTwo'){
+    			$('#challenge2, #challenge1').addClass('activeSection');
+    		} else if(destination.anchor == 'challengeThree'){
+    			$('#challenge3, #challenge2, #challenge1').addClass('activeSection');
+    		} else if(destination.anchor == 'core'){
+    			$('#dataPrivacy').addClass('activeSection');
+    		} else if(destination.anchor == 'newsInfo'){
+    			$('#news').addClass('activeSection');
+    		} else if(destination.anchor == 'partners'){
+    			$('#pilotPartners').addClass('activeSection');
+    		} else if(destination.anchor == 'testimony'){
+    			$('#testimonials').addClass('activeSection');
+    		} else if(destination.anchor == 'whoWe'){
+    			$('#who').addClass('activeSection');
+    		} else if(destination.anchor == 'contactUs'){
+    			$('#contact').addClass('activeSection');
     		}
     	}
     });
@@ -23,7 +46,7 @@ jQuery(document).ready(function( $ ) {
       fullpage_api.moveSectionDown();
     });
 
-    
+    $('#home').addClass('loaded');
 
     //var position = $(window).scrollTop(); 
 
@@ -293,4 +316,49 @@ $('.individual .close').on('click', function(e){
 	e.preventDefault();
 	$('.individual').fadeOut();
 });
+
+// Text Animation
+
+$('.animText').each(function(){
+	var animText = $(this);
+	var spanInserted = $(animText).html().split(" ").join(" </span><span class='line'>");
+	var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
+	$(animText).html(wrapped);
+
+	var refPos = $('.animText span.line:first-child').position().top;
+	var newPos;
+	$(animText).find('span.line').each(function(index) {
+	    newPos = $(this).position().top   
+	    if (index == 0){
+	       return;
+	    }
+	    if (newPos == refPos){
+	        $(this).prepend($(this).prev().text() + " ");
+	        $(this).prev().remove();
+	    } 
+	    refPos = newPos;
+	});
+});
+
+/*
+var spanInserted = $('.animText').html().split(" ").join(" </span><span class='line'>");
+var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
+
+$('.animText').html(wrapped);
+
+var refPos = $('.animText span.line:first-child').position().top;
+
+var newPos;
+$('.animText span.line').each(function(index) {
+    newPos = $(this).position().top   
+    if (index == 0){
+       return;
+    }
+    if (newPos == refPos){
+        $(this).prepend($(this).prev().text() + " ");
+        $(this).prev().remove();
+    } 
+    refPos = newPos;
+
+});*/
 });//Don't remove ---- end of jQuery wrapper

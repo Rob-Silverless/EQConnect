@@ -39,7 +39,7 @@
         </div>-->
         <div class="container cols-6-18 align-vert-c">
             <div class="col" id="logo">
-                <a href="#home">
+                <a href="#top">
                     <?php get_template_part("template-parts/logo"); ?>
                 </a>
             </div>

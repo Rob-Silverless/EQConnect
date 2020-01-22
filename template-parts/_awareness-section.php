@@ -1,9 +1,9 @@
 <div class="section" id="awarenessSection">
 	<div class="container cols-12-12 align-vert-c">
-		<div class="col">
-			<div class="h1"><?php the_sub_field('title')?></div>
-			<div class="h2"><?php the_sub_field('sub_title')?></div>
-			<div>
+		<div class="col" id="awarenessSectionContainer">
+			<div class="h1 animate"><?php the_sub_field('title')?></div>
+			<div class="h2 animate"><?php the_sub_field('sub_title')?></div>
+			<div class="animText">
 				<?php the_sub_field('content')?>
 			</div>
 		</div>

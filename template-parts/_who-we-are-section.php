@@ -5,15 +5,15 @@
 				<div class="col">
 					<div class="h1"><?php the_sub_field('title')?></div>
 					<div class="h2"><?php the_sub_field('sub_title')?></div>
-					<div>
+					<div class="animText">
 						<?php the_sub_field('content')?>
 					</div>
 				</div>
 			</div>
-			<div class="container cols-8">
+			<div class="container cols-8 animateSection">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
-					<div class="col person" data-individual="individual-<?php echo get_row_index(); ?>">
+					<div class="col person animate" data-individual="individual-<?php echo get_row_index(); ?>">
 						<div class="person_profile">
 							<?php if( get_field('profile_image') ): ?>
 								<?php 
@@ -34,7 +34,7 @@
 			<?php 
 				$image = get_sub_field('image');
 			?>
-			<img src="<?php echo esc_url($image['url']); ?>" />
+			<img src="<?php echo esc_url($image['url']); ?>" class="animateImage"/>
 		</div>
 	</div>
 
