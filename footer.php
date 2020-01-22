@@ -23,11 +23,11 @@
 
 			<div class="col mandatory">
 
-				<a href="<?php echo home_url() . '/terms-conditions'; ?>">Terms</a>
+				<a href="#" id="tc">Terms</a>
 
 				<span class="divider">|</span>
 
-				<a href="<?php echo home_url() . '/privacy-policy'; ?>">Privacy</a>
+				<a href="#" id="privacy">Privacy</a>
 
 			</div>
 
@@ -40,6 +40,23 @@
 </footer>
 
 </div><!-- #page -->
+
+<div class="legalInfo">
+	<div class="legalOverlay"></div>
+	<div class="legalContent">
+		<div class="close">x</div>
+ 		<?php
+		    // query for the about page
+		    $query = new WP_Query( 'pagename=privacy-policy' );
+		    // "loop" through query (even though it's just one page) 
+		    while ( $query->have_posts() ) : $query->the_post();
+		        the_content();
+		    endwhile;
+		    // reset post data (important!)
+		    wp_reset_postdata();
+		?>
+	</div>
+</div>
 
 <?php wp_footer(); ?>
 

@@ -24,19 +24,23 @@
 
 <header>
     <nav id="nav">
-        <!--<div class="container cols-2-8-2">
+        <div class="container cols-2-20 mobile-nav align-vert-c">
             <div class="col">
-                <div class="menu-trigger">
-                    MENU TRIGGER
-                </div>
+                <a class="menu-trigger" href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
             </div>
             <div class="col align-center">
-                LOGO
+                <a href="#top">
+                    <?php get_template_part("template-parts/logo"); ?>
+                </a>
             </div>
             <div class="col">
 
             </div>
-        </div>-->
+        </div>
+
+
         <div class="container cols-6-18 align-vert-c">
             <div class="col" id="logo">
                 <a href="#top">
@@ -55,15 +59,15 @@
     </nav>
 </header>
 
-<!--
 <div class="offscreen-nav">
-    <?php /*
+    <div class="close menu-trigger"><i class="fas fa-times"></i></div>
+    <?php get_template_part("template-parts/logo"); ?>
+    <?php 
     wp_nav_menu(array(
         'theme_location'  => 'main-menu',
         'container_class' => 'mainMenu'
-    )); */
+    ));
     ?>
 </div>
--->
 
 		<main><!--closes in footer.php-->

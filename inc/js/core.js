@@ -205,9 +205,15 @@ jQuery(document).ready(function( $ ) {
 
 /* CLASS AND FOCUS ON CLICK */
 
-    $(".menu-trigger").click(function() {
+    $(".menu-trigger").click(function(e) {
+    	e.preventDefault();
 	    $(this).toggleClass("clicked");
 	    $(".offscreen-nav").toggleClass("show");
+    });
+    $(".offscreen-nav a").click(function() {
+    	setTimeout(function() {
+		    $(".offscreen-nav").removeClass("show");
+		}, 300);
     });
 
     $(".read-more").click(function() {
@@ -340,25 +346,16 @@ $('.animText').each(function(){
 	});
 });
 
-/*
-var spanInserted = $('.animText').html().split(" ").join(" </span><span class='line'>");
-var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
+$('.legalInfo').hide();
+// Legal Information
+$('#privacy').on('click', function(e){
+	e.preventDefault();
+	$('.legalInfo').fadeIn();
+})
 
-$('.animText').html(wrapped);
+$('.legalOverlay, .legalInfo .close').on('click', function(e){
+	e.preventDefault();
+	$('.legalInfo').fadeOut();
+});
 
-var refPos = $('.animText span.line:first-child').position().top;
-
-var newPos;
-$('.animText span.line').each(function(index) {
-    newPos = $(this).position().top   
-    if (index == 0){
-       return;
-    }
-    if (newPos == refPos){
-        $(this).prepend($(this).prev().text() + " ");
-        $(this).prev().remove();
-    } 
-    refPos = newPos;
-
-});*/
 });//Don't remove ---- end of jQuery wrapper
