@@ -5,7 +5,7 @@
 			<h2 class="animate"><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 grid-gap three-points-content">
+	<div class="container cols-8 cols-md-offset-6-12 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number animate">
 				1
@@ -36,7 +36,7 @@
 			<h2><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 grid-gap three-points-content">
+	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -72,7 +72,7 @@
 			<h2><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 grid-gap three-points-content">
+	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -98,7 +98,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container cols-12 three-points-eq">
+	<div class="container cols-12 cols-xl-18 cols-md-offset-4-16 three-points-eq">
 		<div class="col animText">
 			<?php the_sub_field('content');?>
 		</div>

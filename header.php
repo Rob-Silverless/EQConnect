@@ -41,7 +41,7 @@
         </div>
 
 
-        <div class="container cols-6-18 align-vert-c">
+        <div class="container cols-6-18 align-vert-c desktop-nav">
             <div class="col" id="logo">
                 <a href="#top">
                     <?php get_template_part("template-parts/logo"); ?>

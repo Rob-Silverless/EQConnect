@@ -1,7 +1,7 @@
 <div class="section who-we-are"  id="who">
-	<div class="container cols-16-8 align-vert-c">
+	<div class="container cols-16-8 cols-md-24-24 align-vert-c">
 		<div class="col">
-			<div class="container cols-14 content">
+			<div class="container cols-14 cols-xl-24 content">
 				<div class="col">
 					<div class="h1"><?php the_sub_field('title')?></div>
 					<div class="h2"><?php the_sub_field('sub_title')?></div>
@@ -10,7 +10,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container cols-8 animateSection">
+			<div class="container cols-8 cols-md-12 cols-sm-24 animateSection">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
 					<div class="col person animate" data-individual="individual-<?php echo get_row_index(); ?>">
@@ -30,7 +30,7 @@
 				<?php endwhile; endif;?>
 			</div>
 		</div>
-		<div class="col align-center">
+		<div class="col align-center hide-md">
 			<?php 
 				$image = get_sub_field('image');
 			?>
@@ -42,8 +42,8 @@
 	while( have_rows('person') ): the_row();?>
 
 	<div class="individual" id="individual-<?php echo get_row_index(); ?>">
-		<div class="container cols-10-14">
-			<div class="col image">
+		<div class="container cols-10-14 cols-sm-24-24">
+			<div class="col image hide-sm">
 				<?php if( get_field('profile_image') ): ?>
 					<?php 
 						$image = get_sub_field('profile_image');

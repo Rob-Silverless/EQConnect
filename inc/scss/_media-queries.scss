@@ -1,12 +1,69 @@
 /*! == MEDIA QUERIES == */
 
+
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+        .container{
+            max-width: #{$size};
+        }
+		@for $i from 1 through $col-count {
+			.container.cols-#{$name}-#{$i} > .col {
+				grid-column: span $i;
+			}
+		}
+        @for $gridOffset from 1 to $col-count {
+            @for $grid from 1 to $col-count {
+                .container.cols-#{$name}-offset-#{$gridOffset}-#{$grid} > .col{
+                    grid-column-start:($gridOffset + 1);
+                    grid-column-end:(($gridOffset + 1) + $grid);
+                }
+            }
+        }
+	    .container.cols-#{$name}-15-9{
+	        @include gridTwoCol(15, 9);
+	    }
+	    .container.cols-#{$name}-24-24{
+	        @include gridTwoCol(24, 24);
+	    }
+	}
+}
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+        .hide-#{$name}{
+			display: none
+		}
+	}
+}
+
+
+
 /*===========LARGE (1200px)==========*/
 
 @media only screen and (max-width: 1200px) {
 
 /*---GLOBALS---*/ 
+h1, .h1{font-size:rem-calc(36);}
+h2, .h2{font-size:rem-calc(32);}
+h3, .h3{font-size:rem-calc(28);}
+h4, .h4{font-size:rem-calc(24);}
+h5, .h5{font-size:rem-calc(20);}
+h6, .h6{font-size:rem-calc(16);}
 
-/*---HEADER---*/ 
+.three-points{
+	.grid-gap{
+		grid-gap:rem-calc(16);
+	}
+}
+
+/*---HEADER---*/
+.mobile-nav {
+	display: block;
+}
+.desktop-nav{
+	display: none;
+} 
 
 /*---CONTENT---*/
 
@@ -26,6 +83,61 @@ body {
 }
  
 /*---HEADER---*/
+#headerSpin{
+	max-width: rem-calc(250);
+	margin-top: rem-calc(50);
+}
+#home{
+	padding-top: rem-calc(50);
+	text-align: center;
+	.blockquote{
+		p{
+			&:after{
+				display: none;
+			}
+		}
+	}
+	#mouse-scroll-anchor{
+		display: none;
+	}
+}
+#awarenessSection{
+	text-align: center;
+	img{
+		max-width: rem-calc(250);
+	}
+}
+.three-points{
+	text-align: center;
+}
+#news{
+	text-align: center;
+	.date{
+		&:after{
+			display: none;
+		}
+	}
+}
+#pilotPartners{
+	text-align: center;
+	.brands{
+		.col{
+			padding-bottom:rem-calc(50);
+		}
+	}
+}
+#who{
+	text-align: center;
+	.individual{
+		text-align: left;
+	}
+}
+#contact{
+	text-align: center;
+	img{
+		max-size:rem-calc(250);
+	}
+}
 
 /*---CONTENT---*/
 
@@ -39,9 +151,25 @@ body {
 @media only screen and (max-width: 768px) {
 
 /*---GLOBALS---*/
+h1, .h1{font-size:rem-calc(28);}
+h2, .h2{font-size:rem-calc(26);}
+h3, .h3{font-size:rem-calc(22);}
+h4, .h4{font-size:rem-calc(20);}
+h5, .h5{font-size:rem-calc(18);}
+h6, .h6{font-size:rem-calc(14);}
 
 body {
   font-size: 0.65em;
+}
+
+.three-points{
+	.grid-gap{
+		grid-gap:rem-calc(4);
+	}
+}
+
+.container.grid-gap{
+	grid-gap:rem-calc(0);
 }
 
 /*---HEADER---*/

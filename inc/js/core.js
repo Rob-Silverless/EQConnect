@@ -8,6 +8,7 @@ jQuery(document).ready(function( $ ) {
     	licenseKey: '16F37769-414746C6-910FC81C-EA289CE3',
     	//fadingEffectKey: '33F499EA-4AAC4488-AA15BEAD-F13978F8',
     	//fadingEffect: 'section',
+    	responsiveWidth: 1200,
         scrollOverflow: true,
     	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
     	afterLoad: function (anchorLink, index){
@@ -259,7 +260,7 @@ jQuery(document).ready(function( $ ) {
 	};
 
 	$(window).on('resize scroll', function() {
-
+		
 		$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
 			if ($(this).isInViewport()) {
 				$(this).addClass('active');
@@ -276,13 +277,16 @@ $("#news-carousel").owlCarousel({
     nav:true,
     slideBy: 4,
     responsive:{
-        0:{
+    	0:{
             items:1
         },
-        600:{
+        767:{
             items:2
         },
-        1000:{
+        1023:{
+            items:3
+        },
+        1200:{
             items:4
         }
     }

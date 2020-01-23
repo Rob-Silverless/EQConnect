@@ -1,5 +1,5 @@
 <div class="section" id="contact">
-	<div class="container cols-12-12 align-vert-c animateSection">
+	<div class="container cols-12-12 cols-md-24-24 align-vert-c animateSection">
 		<div class="col">
 			<div class="h1 animate"><?php the_sub_field('title')?></div>
 			<div class="h2 animate"><?php the_sub_field('sub_title')?></div>

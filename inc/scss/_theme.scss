@@ -518,7 +518,7 @@ a{
 
 
 // Animations
-.headerContent{
+/*.headerContent{
     h1, h2, .blockquote, .credit, .funded{
         opacity:0;
         transform: translateY(20px);
@@ -557,7 +557,7 @@ a{
         transition: $slowEffect;
         transition-delay:2.8s
     }
-}
+}*/
 #headerSpin{
     animation:spin 60s linear infinite;
 }
@@ -597,13 +597,13 @@ a{
     } 
 }
 
-.animate, #awarenessSectionContainer .animText .line, .three-points-content .animText .line, .three-points-eq .animText .line, #news-carousel .owl-item{
+/*.animate, #awarenessSectionContainer .animText .line, .three-points-content .animText .line, .three-points-eq .animText .line, #news-carousel .owl-item{
     opacity: 0;
     transform:translateY(20px);
 }
 #awarenessImage, .data{
     opacity:0
-}
+}*/
 .line{
     display:inline-block;
     line-height:1.6;

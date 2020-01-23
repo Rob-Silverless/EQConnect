@@ -2,7 +2,7 @@
 	$image = get_sub_field('background-image');
 ?>
 <div class="section testimonial" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="testimonials">
-	<div class="container cols-offset-6-12 align-vert-c">
+	<div class="container cols-offset-6-12 cols-xl-offset-3-18  cols-sm-offset-1-22 align-vert-c">
 		<div class="col testimonial-container align-center">
 			<div class="h1 ">
 				<?php the_sub_field('title');?>

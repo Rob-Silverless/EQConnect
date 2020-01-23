@@ -3,6 +3,10 @@
 		<div class="col">
 			<div class="h1"><?php the_sub_field('title')?></div>
 			<div class="h2"><?php the_sub_field('sub_title')?></div>
+		</div>
+	</div>
+	<div class="container cols-24 cols-xl-offset-2-20">
+		<div class="col">
 			<div class="owl-carousel owl-theme" id="news-carousel">
 			<?php
 			    $args = array(
