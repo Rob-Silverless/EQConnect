@@ -11,7 +11,7 @@
 
 	<div class="socket">
 
-		<div class="container cols-8">
+		<div class="container cols-8 cols-sm-24">
 
 			<div class="col colophon">&copy; EQ Connect <?php echo date ('Y');?></div>
 

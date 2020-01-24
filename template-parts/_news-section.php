@@ -5,7 +5,7 @@
 			<div class="h2"><?php the_sub_field('sub_title')?></div>
 		</div>
 	</div>
-	<div class="container cols-24 cols-xl-offset-2-20">
+	<div class="container cols-24 cols-xl-offset-2-20 cols-sm-offset-4-16">
 		<div class="col">
 			<div class="owl-carousel owl-theme" id="news-carousel">
 			<?php
@@ -20,7 +20,7 @@
  					<?php 
 						$image = get_field('image');
 					?>
- 					<div>
+ 					<div class="slide-up">
  						<div class="news-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
 	 						<div class="news-content">
 	 						<h3><?php the_field('title');?></h3>

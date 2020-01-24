@@ -59,7 +59,7 @@ h6, .h6{font-size:rem-calc(16);}
 
 /*---HEADER---*/
 .mobile-nav {
-	display: block;
+	display: grid;
 }
 .desktop-nav{
 	display: none;
@@ -172,11 +172,40 @@ body {
 	grid-gap:rem-calc(0);
 }
 
+#who{
+	text-align: center;
+	.individual{
+		.info{
+			padding:rem-calc(20);
+		}
+	}
+}
 /*---HEADER---*/
+
+.offscreen-nav{
+	.close{
+        top:rem-calc(20);
+        right:rem-calc(20);
+    }
+}
 
 /*---CONTENT---*/
   
 /*---FOOTER---*/
+footer{
+	 .socket {
+	 	.colophon{
+	 		justify-content: center;
+		}
+		.silverless{
+			display: none;
+		}
+		.mandatory{
+			justify-content: center;
+			padding-top:rem-calc(10);
+		}
+	}
+}
 
 }/*---end small mq---*/
 

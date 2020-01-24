@@ -24,7 +24,7 @@
 
 <header>
     <nav id="nav">
-        <div class="container cols-2-20 mobile-nav align-vert-c">
+        <div class="container cols-3-18 mobile-nav align-vert-c">
             <div class="col">
                 <a class="menu-trigger" href="#">
                     <i class="fas fa-bars"></i>

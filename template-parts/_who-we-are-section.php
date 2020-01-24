@@ -3,17 +3,17 @@
 		<div class="col">
 			<div class="container cols-14 cols-xl-24 content">
 				<div class="col">
-					<div class="h1"><?php the_sub_field('title')?></div>
-					<div class="h2"><?php the_sub_field('sub_title')?></div>
-					<div class="animText">
+					<div class="h1 slide-up"><?php the_sub_field('title')?></div>
+					<div class="h2 slide-up"><?php the_sub_field('sub_title')?></div>
+					<div class="slide-up">
 						<?php the_sub_field('content')?>
 					</div>
 				</div>
 			</div>
-			<div class="container cols-8 cols-md-12 cols-sm-24 animateSection">
+			<div class="container cols-8 cols-md-12 cols-sm-24">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
-					<div class="col person animate" data-individual="individual-<?php echo get_row_index(); ?>">
+					<div class="col person slow-fade" data-individual="individual-<?php echo get_row_index(); ?>">
 						<div class="person_profile">
 							<?php if( get_field('profile_image') ): ?>
 								<?php 
@@ -34,7 +34,7 @@
 			<?php 
 				$image = get_sub_field('image');
 			?>
-			<img src="<?php echo esc_url($image['url']); ?>" class="animateImage"/>
+			<img src="<?php echo esc_url($image['url']); ?>" class="slow-fade"/>
 		</div>
 	</div>
 

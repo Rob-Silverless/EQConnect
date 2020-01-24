@@ -10,44 +10,32 @@ jQuery(document).ready(function( $ ) {
     	//fadingEffect: 'section',
     	responsiveWidth: 1200,
         scrollOverflow: true,
+        verticalCentered:true,
     	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
-    	afterLoad: function (anchorLink, index){
+    	afterLoad: function (origin, anchorLink, index){
+    		var currentId = $(anchorLink.item).attr('id');
+    		var currentItem = $('#' + currentId + ' .slide-up, #' + currentId + ' .slide-down, #' + currentId + ' .slide-right, #' + currentId + ' .slow-fade')
+    		var time = 500
+    		$(currentItem).each(function(e, i) {
+    			var delay = $(this).attr('data-delay');
+    			console.log(delay);
+				setTimeout(function(){
+					$(i).addClass('active');
+				}, time*e)
+			});
+			var navHeight = $("nav").height();
+			var footerHeight = $("footer").height();
+			console.log(navHeight);
+			  $(".section > div").css({
+			    "padding-top": navHeight + "px",
+			    "padding-bottom": footerHeight + "px"
+			  });
     	},
-        onLeave: function(origin, destination, direction){
-    		var leavingSection = this;
-    		//after leaving section 1
-    		if(origin.index == 0 && direction =='down'){
-    			$('html').addClass('sssss');
-    		}
-    		if(destination.anchor == 'awareness'){
-    			$('#awarenessSection').addClass('activeSection');
-    		} else if(destination.anchor == 'challengeOne'){
-    			$('#challenge1').addClass('activeSection');
-    		} else if(destination.anchor == 'challengeTwo'){
-    			$('#challenge2, #challenge1').addClass('activeSection');
-    		} else if(destination.anchor == 'challengeThree'){
-    			$('#challenge3, #challenge2, #challenge1').addClass('activeSection');
-    		} else if(destination.anchor == 'core'){
-    			$('#dataPrivacy').addClass('activeSection');
-    		} else if(destination.anchor == 'newsInfo'){
-    			$('#news').addClass('activeSection');
-    		} else if(destination.anchor == 'partners'){
-    			$('#pilotPartners').addClass('activeSection');
-    		} else if(destination.anchor == 'testimony'){
-    			$('#testimonials').addClass('activeSection');
-    		} else if(destination.anchor == 'whoWe'){
-    			$('#who').addClass('activeSection');
-    		} else if(destination.anchor == 'contactUs'){
-    			$('#contact').addClass('activeSection');
-    		}
-    	}
     });
 
     $('#mouse-scroll-anchor').on('click', function(){
       fullpage_api.moveSectionDown();
     });
-
-    $('#home').addClass('loaded');
 
     //var position = $(window).scrollTop(); 
 
@@ -66,11 +54,11 @@ jQuery(document).ready(function( $ ) {
 
 /* ADD CLASS ON LOAD*/
 
-    $("html").delay(1500).queue(function(next) {
+    /*$("html").delay(1500).queue(function(next) {
         $(this).addClass("loaded");
 
         next();
-    });
+    });*/
 
 //Smooth Scroll
 
@@ -85,125 +73,6 @@ jQuery(document).ready(function( $ ) {
 
 /* LOAD MAP */
 
-	if($("#bell-map-contact").length > 0 && JSON.parse($("#bell-map-contact").attr("points"))) {
-	    var points = JSON.parse($("#bell-map-contact").attr("points"));
-
-        mapboxgl.accessTeqconnectn = 'pk.eyJ1Ijoic2lsdmVybGVzcyIsImEiOiJjaXNibDlmM2gwMDB2Mm9tazV5YWRmZTVoIn0.ilTX0t72N3P3XbzGFhUKcg';
-
-		var map = new mapboxgl.Map({
-		    container:  'bell-map-contact',
-		    style:      'mapbox://styles/eqconnect/cjvnw465y0bl91cmionu5nqmo',
-		    center:     points.geometry.coordinates,
-		    zoom:       11,
-		    scrollZoom: false
-		});
-
-		map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-
-		var geocoder = new MapboxGeocoder({
-			accessTeqconnectn: mapboxgl.accessTeqconnectn,
-			marker: {
-				color: 'grey'
-			},
-			countries: 'gb',
-			mapboxgl: mapboxgl,
-			flyTo: false
-		});
-
-		map.addControl(geocoder, 'top-left');
-
-		var geojson = {
-			type: 'FeatureCollection',
-			features: [points]
-		};
-
-		var coorPoints = [];
-
-		geojson.features.forEach(function(marker) {
-
-			var el = document.createElement('div');
-			el.className = 'marker';
-
-			new mapboxgl.Marker(el)
-				.setLngLat(marker.geometry.coordinates)
-				.setPopup(new mapboxgl.Popup({ offset: 25 })
-				.setHTML(
-			    	'<div class="title">The Bell <span>at</span> Ramsbury</div>' +
-			    	'<div class="address">' + marker.properties.address  + '</div>' +
-			    	'<div class="phone">'   + marker.properties.phone    + '</div>' +
-			    	'<div class="email">'   + marker.properties.email    + '</div>'))
-				.addTo(map);
-
-			el.addEventListener('click', function(e){
-				position = marker.geometry.coordinates[1] - 0.0200;
-				map.flyTo({
-				    center: [marker.geometry.coordinates[0], position],
-				    zoom: 11
-			    });
-			});
-
-			coorPoints.push(new mapboxgl.LngLat(marker.geometry.coordinates[0], marker.geometry.coordinates[1]));
-		});
-
-		geocoder.on("result", function(e) {
-			var distance = [];
-			var searchPoint = new mapboxgl.LngLat(e.result.geometry.coordinates[0], e.result.geometry.coordinates[1]);
-
-			coorPoints.forEach(function(markerPoint) {
-				distance.push({
-					'point': markerPoint,
-					'distance': distanceBetweenPoints(searchPoint, markerPoint)
-				});
-			});
-
-			var minDistance = distance.reduce(function(prev, curr) {
-			    return prev.distance < curr.distance ? prev : curr;
-			});
-
-			var bounds = new mapboxgl.LngLatBounds();
-
-			bounds.extend(minDistance.point);
-			bounds.extend(searchPoint);
-
-			map.fitBounds(bounds, { padding: 100 });
-		});
-
-		$(window).bind('mousewheel DOMMouseScroll', function(event) {
-		    if(event.ctrlKey == true) {
-		        map['scrollZoom'].enable();
-		    }
-		    else {
-		        map['scrollZoom'].disable();
-		    }
-		});
-
-		function distanceBetweenPoints(point1, point2) {
-			var R = 6371e3; // metres
-			var φ1 = point1.lat.toRadians();
-			var φ2 = point2.lat.toRadians();
-			var Δφ = (point2.lat-point1.lat).toRadians();
-			var Δλ = (point2.lng-point1.lng).toRadians();
-
-			var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-			        Math.cos(φ1) * Math.cos(φ2) *
-			        Math.sin(Δλ/2) * Math.sin(Δλ/2);
-			var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-			var d = R * c;
-			return d;
-		}
-
-		function getMiddlePoint(point1, point2) {
-			var lat = (point1.lat + point2.lat) / 2;
-			var lng = (point1.lng + point2.lng) / 2;
-			return [lng, lat];
-		}
-
-		Number.prototype.toRadians = function() {
-			return this * Math.PI / 180;
-		};
-	}
-
 /* CLASS AND FOCUS ON CLICK */
 
     $(".menu-trigger").click(function(e) {
@@ -214,7 +83,7 @@ jQuery(document).ready(function( $ ) {
     $(".offscreen-nav a").click(function() {
     	setTimeout(function() {
 		    $(".offscreen-nav").removeClass("show");
-		}, 300);
+		}, 100);
     });
 
     $(".read-more").click(function() {
@@ -243,11 +112,11 @@ jQuery(document).ready(function( $ ) {
 
 	};
 
-	$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
+	/*$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
 		if ($(this).isOnScreen()) {
 			$(this).addClass('active');
 		}
-	});
+	});*/
 
 // ========== Add class on entering viewport
 
@@ -261,11 +130,11 @@ jQuery(document).ready(function( $ ) {
 
 	$(window).on('resize scroll', function() {
 		
-		$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
+		/*$('.slide-up, .slide-down, .slide-right, .slow-fade').each(function() {
 			if ($(this).isInViewport()) {
 				$(this).addClass('active');
 			}
-		});
+		});*/
 
 	});
 
@@ -319,8 +188,9 @@ $(this).children('span').text($(this).index()+1);
 // Who we are section
 
 $('.person').on('click', function(){
+	elementOffset = $(this).offset().top;
 	var personId = $(this).attr('data-individual');
-	$('#' + personId).fadeIn();
+	$('#' + personId).css('top', elementOffset).fadeIn();
 });
 $('.individual .close').on('click', function(e){
 	e.preventDefault();
@@ -331,9 +201,14 @@ $('.individual .close').on('click', function(e){
 
 $('.animText').each(function(){
 	var animText = $(this);
-	var spanInserted = $(animText).html().split(" ").join(" </span><span class='line'>");
-	var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
-	$(animText).html(wrapped);
+	//var spanInserted = $(animText).html().split(" ").join(" </span><span class='line'>");
+	var spanInserted = $(animText).text().split(" ");
+	//var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
+	/*var wrapped = $.each(spanInserted, function(i, v) {
+	    $(animText).append($("<span>").text(v));
+		console.log(refPos);
+	});*/
+	/*$(animText).html(wrapped);
 
 	var refPos = $('.animText span.line:first-child').position().top;
 	var newPos;
@@ -347,8 +222,10 @@ $('.animText').each(function(){
 	        $(this).prev().remove();
 	    } 
 	    refPos = newPos;
-	});
+	});*/
 });
+
+
 
 $('.legalInfo').hide();
 // Legal Information
