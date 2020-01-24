@@ -203,11 +203,11 @@ $('.animText').each(function(){
 	var animText = $(this);
 	//var spanInserted = $(animText).html().split(" ").join(" </span><span class='line'>");
 	var spanInserted = $(animText).text().split(" ");
+	var refPos = $('.animText span:first-child').position().top;
 	//var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
-	/*var wrapped = $.each(spanInserted, function(i, v) {
+	var wrapped = $.each(spanInserted, function(i, v) {
 	    $(animText).append($("<span>").text(v));
-		console.log(refPos);
-	});*/
+	});
 	/*$(animText).html(wrapped);
 
 	var refPos = $('.animText span.line:first-child').position().top;
