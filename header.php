@@ -35,9 +35,6 @@
                     <?php get_template_part("template-parts/logo"); ?>
                 </a>
             </div>
-            <div class="col">
-
-            </div>
         </div>
 
 

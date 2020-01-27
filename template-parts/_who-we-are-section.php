@@ -3,9 +3,9 @@
 		<div class="col">
 			<div class="container cols-14 cols-xl-24 content">
 				<div class="col">
-					<div class="h1 slide-up"><?php the_sub_field('title')?></div>
-					<div class="h2 slide-up"><?php the_sub_field('sub_title')?></div>
-					<div class="slide-up">
+					<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>
+					<div class="h2 slide-up" data-delay="800"><?php the_sub_field('sub_title')?></div>
+					<div class="slide-up" data-delay="1000">
 						<?php the_sub_field('content')?>
 					</div>
 				</div>
@@ -13,7 +13,7 @@
 			<div class="container cols-8 cols-md-12 cols-sm-24">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
-					<div class="col person slow-fade" data-individual="individual-<?php echo get_row_index(); ?>">
+					<div class="col person slow-fade" data-individual="individual-<?php echo get_row_index(); ?>" data-delay="<?php echo 1200 + (200* get_row_index()); ?>">
 						<div class="person_profile">
 							<?php if( get_field('profile_image') ): ?>
 								<?php 
@@ -34,7 +34,7 @@
 			<?php 
 				$image = get_sub_field('image');
 			?>
-			<img src="<?php echo esc_url($image['url']); ?>" class="slow-fade"/>
+			<img src="<?php echo esc_url($image['url']); ?>" class="slow-fade" data-delay="1800"/>
 		</div>
 	</div>
 

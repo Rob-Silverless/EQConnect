@@ -222,7 +222,7 @@ a{
             left: 0;
         }
     }
-    span{
+    .credit{
         color: $brand-secondary;
     }
 }
@@ -241,6 +241,9 @@ a{
     }
     .three-points-content{
         padding-bottom:rem-calc(50);
+    }
+    .three-points-paragraph{
+        opacity:0;
     }
 }
 .challenge{
@@ -518,46 +521,6 @@ a{
 
 
 // Animations
-/*.headerContent{
-    h1, h2, .blockquote, .credit, .funded{
-        opacity:0;
-        transform: translateY(20px);
-    }
-}
-.headerImage, .animateImage{
-    opacity:0;
-    transform:scale(1.1);
-}
-.loaded{
-    .headerContent{
-        h1, h2, .blockquote, .credit, .funded{
-            opacity:1;
-            transform: translateY(0);
-            transition: $slowEffect;
-        }
-        h1{
-            transition-delay:0.4s
-        }
-        h2{
-            transition-delay:0.8s
-        }
-        .blockquote{
-            transition-delay:1.2s
-        }
-        .credit{
-            transition-delay:1.6s
-        }
-        .funded{
-            transition-delay:2s
-        }
-    }
-    .headerImage{
-        opacity:1;
-        transform:scale(1);
-        transition: $slowEffect;
-        transition-delay:2.8s
-    }
-}*/
 #headerSpin{
     animation:spin 60s linear infinite;
 }
@@ -596,14 +559,15 @@ a{
         transform:rotate(360deg) scale(.95); opacity:1;
     } 
 }
-
-/*.animate, #awarenessSectionContainer .animText .line, .three-points-content .animText .line, .three-points-eq .animText .line, #news-carousel .owl-item{
-    opacity: 0;
-    transform:translateY(20px);
+.animText{
+    margin-top:rem-calc(16);
+    margin-bottom:rem-calc(16);
+    .animTextSpan{
+        display:inline-block;
+        line-height:1.6;
+        margin-right:rem-calc(4);
+    }
 }
-#awarenessImage, .data{
-    opacity:0
-}*/
 .line{
     display:inline-block;
     line-height:1.6;
@@ -737,6 +701,21 @@ a{
         transform:scale(1);
         transition:$slowEffect;
         transition-delay: 0.4s; 
+    }
+}
+.fp-section{
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+    transition: all .7s ease-in-out;
+    &#challenge2, &#challenge3{
+        position:absolute;
+        left:0;
+    }
+    &.active{
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
     }
 }
 

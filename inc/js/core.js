@@ -10,27 +10,40 @@ jQuery(document).ready(function( $ ) {
     	//fadingEffect: 'section',
     	responsiveWidth: 1200,
         scrollOverflow: true,
-        verticalCentered:true,
     	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
     	afterLoad: function (origin, anchorLink, index){
     		var currentId = $(anchorLink.item).attr('id');
     		var currentItem = $('#' + currentId + ' .slide-up, #' + currentId + ' .slide-down, #' + currentId + ' .slide-right, #' + currentId + ' .slow-fade')
-    		var time = 500
     		$(currentItem).each(function(e, i) {
     			var delay = $(this).attr('data-delay');
-    			console.log(delay);
+    			if($(this).hasClass('animTextSpan')){
+    				var speed = $(this).parent().attr('data-speed');
+    				delay = $(this).parent().attr('data-delay')*(e/speed)
+    			} else {
+    				delay
+    			}
 				setTimeout(function(){
 					$(i).addClass('active');
-				}, time*e)
+				}, delay)
 			});
 			var navHeight = $("nav").height();
 			var footerHeight = $("footer").height();
-			console.log(navHeight);
-			  $(".section > div").css({
-			    "padding-top": navHeight + "px",
-			    "padding-bottom": footerHeight + "px"
-			  });
+			$(".section > div").css({
+				"padding-top": navHeight + "px",
+				"padding-bottom": footerHeight + "px"
+			});
     	},
+    	afterResize: function(width, height){
+			var threePointsTop = $("#challenge1").offset().top;
+			$("#challenge2, #challenge3").css('top', threePointsTop);
+			var navHeight = $("nav").height();
+			var footerHeight = $("footer").height();
+			$(".section > div").css({
+				"padding-top": navHeight + "px",
+				"padding-bottom": footerHeight + "px"
+			});
+			console.log('resized', navHeight, footerHeight, threePointsTop);
+		}
     });
 
     $('#mouse-scroll-anchor').on('click', function(){
@@ -201,30 +214,16 @@ $('.individual .close').on('click', function(e){
 
 $('.animText').each(function(){
 	var animText = $(this);
-	//var spanInserted = $(animText).html().split(" ").join(" </span><span class='line'>");
 	var spanInserted = $(animText).text().split(" ");
-	var refPos = $('.animText span:first-child').position().top;
-	//var wrapped = ("<span class='line'>").concat(spanInserted, "</span>");
-	var wrapped = $.each(spanInserted, function(i, v) {
-	    $(animText).append($("<span>").text(v));
+	$(animText).empty();
+	$.each(spanInserted, function(i, v) {
+	    $(animText).append($("<span class='animTextSpan slide-up'>").text(v));
 	});
-	/*$(animText).html(wrapped);
-
-	var refPos = $('.animText span.line:first-child').position().top;
-	var newPos;
-	$(animText).find('span.line').each(function(index) {
-	    newPos = $(this).position().top   
-	    if (index == 0){
-	       return;
-	    }
-	    if (newPos == refPos){
-	        $(this).prepend($(this).prev().text() + " ");
-	        $(this).prev().remove();
-	    } 
-	    refPos = newPos;
-	});*/
 });
 
+//Three Points Sections
+var threePointsTop = $("#challenge1").offset().top;
+$("#challenge2, #challenge3").css('top', threePointsTop);
 
 
 $('.legalInfo').hide();

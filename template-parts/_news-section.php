@@ -1,8 +1,8 @@
 <div class="section news" id="news">
 	<div class="container cols-24">
 		<div class="col">
-			<div class="h1"><?php the_sub_field('title')?></div>
-			<div class="h2"><?php the_sub_field('sub_title')?></div>
+			<div class="h1" data-delay="500"><?php the_sub_field('title')?></div>
+			<div class="h2" data-delay="800"><?php the_sub_field('sub_title')?></div>
 		</div>
 	</div>
 	<div class="container cols-24 cols-xl-offset-2-20 cols-sm-offset-4-16">
@@ -19,8 +19,10 @@
  				while ($posts -> have_posts()) : $posts -> the_post(); ?>
  					<?php 
 						$image = get_field('image');
+						$row = $posts->current_post;
+						$delay = 500;
 					?>
- 					<div class="slide-up">
+ 					<div class="slide-up" data-delay="<?php echo $delay * $row + 1?>">
  						<div class="news-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
 	 						<div class="news-content">
 	 						<h3><?php the_field('title');?></h3>

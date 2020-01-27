@@ -1,42 +1,48 @@
-<!--<div class="section three-points " id="challenge1">
+<div class="section three-points hide-md" id="challenge1">
 	<div class="container">
-		<div class="col animateSection">
-			<h1 class="animate"><?php the_sub_field('title');?></h1>
-			<h2 class="animate"><?php the_sub_field('sub_title');?></h2>
+		<div class="col">
+			<h1 class="slide-up" data-delay="500"><?php the_sub_field('title');?></h1>
+			<h2 class="slide-up" data-delay="800"><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 cols-md-offset-6-12 grid-gap three-points-content">
+	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">
 		<div class="col">
-			<div class="three-points-number animate">
+			<div class="three-points-number slow-fade" data-delay="1000">
 				1
 			</div>
-			<div class="animText">
+			<div class="slide-up animText" data-delay="1300"  data-speed="5">
 				<?php the_sub_field('first_block')?>
 			</div>
 		</div>
 		<div class="col">
-
+			<div class="three-points-number slow-fade">
+			</div>
+			<div class="slide-up animText">
+			</div>
 		</div>
 		<div class="col">
-
+			<div class="three-points-number slow-fade">
+			</div>
+			<div class="slide-up animText">
+			</div>
 		</div>
 	</div>
-	<div class="container cols-12">
-		<div class="col">
-			
+	<div class="container cols-12 cols-xl-18 cols-md-offset-4-16 cols-sm-offset-2-20 three-points-eq">
+		<div class="col three-points-paragraph">
+			<?php the_sub_field('content');?>
 		</div>
 	</div>
 </div>
 
 
-<div class="section three-points" id="challenge2">
+<div class="section three-points hide-md" id="challenge2">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
 			<h2><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 grid-gap three-points-content">
+	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">
 		<div class="col">
 			<div class="three-points-number">
 				1
@@ -46,60 +52,63 @@
 			</div>
 		</div>
 		<div class="col">
-			<div class="three-points-number animate">
+			<div class="three-points-number slow-fade" data-delay="500">
 				2
 			</div>
-			<div class="animText">
+			<div class="slide-up animText"  data-delay="1000"  data-speed="5">
 				<?php the_sub_field('second_block')?>
 			</div>
 		</div>
 		<div class="col">
-
+			<div class="three-points-number slow-fade">
+			</div>
+			<div class="slide-up animText">
+			</div>
 		</div>
 	</div>
-	<div class="container cols-12">
-		<div class="col">
-			
+	<div class="container cols-12 cols-xl-18 cols-md-offset-4-16 cols-sm-offset-2-20 three-points-eq">
+		<div class="col three-points-paragraph">
+			<?php the_sub_field('content');?>
 		</div>
 	</div>
-</div>-->
+</div>
 
 
 <div class="section three-points" id="challenge3">
 	<div class="container">
 		<div class="col">
-			<h1 class="slide-up"><?php the_sub_field('title');?></h1>
-			<h2 class="slide-up"><?php the_sub_field('sub_title');?></h2>
+			<h1><?php the_sub_field('title');?></h1>
+			<h2><?php the_sub_field('sub_title');?></h2>
 		</div>
 	</div>
 	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">
 		<div class="col">
-			<div class="three-points-number slow-fade">
+			<div class="three-points-number">
 				1
 			</div>
-			<div class="slide-up animText">
+			<div>
 				<?php the_sub_field('first_block')?>
 			</div>
 		</div>
 		<div class="col">
-			<div class="three-points-number slow-fade">
+			<div class="three-points-number">
 				2
 			</div>
-			<div class="slide-up">
+			<div>
 				<?php the_sub_field('second_block')?>
 			</div>
 		</div>
 		<div class="col">
-			<div class="three-points-number slow-fade">
+			<div class="three-points-number slow-fade" data-delay="500">
 				3
 			</div>
-			<div class="slide-up">
+			<div class="slide-up animText"  data-delay="1000"  data-speed="5">
 				<?php the_sub_field('third_block')?>
 			</div>
 		</div>
 	</div>
 	<div class="container cols-12 cols-xl-18 cols-md-offset-4-16 cols-sm-offset-2-20 three-points-eq">
-		<div class="col slide-up">
+		<div class="col slide-up"  data-delay="4000" id="three-points-paragraph">
 			<?php the_sub_field('content');?>
 		</div>
 	</div>
