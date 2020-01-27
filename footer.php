@@ -22,12 +22,15 @@
 			</div>
 
 			<div class="col mandatory">
+				<?php
 
-				<a href="#" id="tc">Terms</a>
+					if( have_rows('legal_pages', 'option') ):
 
-				<span class="divider">|</span>
+					    while ( have_rows('legal_pages', 'option') ) : the_row();?>
 
-				<a href="#" id="privacy">Privacy</a>
+				<a href="#" data-modal="<?php the_sub_field('page_name')?>-<?php echo get_row_index(); ?>"><?php the_sub_field('page_name')?></a>
+
+			<?php endwhile; endif; ?>
 
 			</div>
 
@@ -41,22 +44,36 @@
 
 </div><!-- #page -->
 
-<div class="legalInfo">
+<?php
+			if( have_rows('legal_pages', 'option') ):
+			    while ( have_rows('legal_pages', 'option') ) : the_row();?>
+
+<div class="legalInfo" id="<?php the_sub_field('page_name')?>-<?php echo get_row_index(); ?>">
 	<div class="legalOverlay"></div>
 	<div class="legalContent">
 		<div class="close">x</div>
+		
+ 		
  		<?php
-		    // query for the about page
-		    $query = new WP_Query( 'pagename=privacy-policy' );
-		    // "loop" through query (even though it's just one page) 
-		    while ( $query->have_posts() ) : $query->the_post();
-		        the_content();
-		    endwhile;
-		    // reset post data (important!)
-		    wp_reset_postdata();
-		?>
+
+		$post_object = get_sub_field('page');
+
+		if( $post_object ): 
+
+			// override $post
+			$post = $post_object;
+			setup_postdata( $post ); 
+
+			?>
+
+		    <?php the_content();?>
+		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		
 	</div>
 </div>
+
+<?php endif; ?>
+		<?php endwhile; endif; ?>
 
 <?php wp_footer(); ?>
 

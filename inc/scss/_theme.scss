@@ -723,6 +723,14 @@ a{
 
 
 /*===========FOOTER==========*/
+.mandatory a{
+    padding-right:rem-calc(10);
+    padding-left:rem-calc(10);
+    border-right: 1px solid white;
+    &:last-of-type{
+        border-right: 1px solid transparent;
+    }
+}
 .silverless{
     text-align:center;
     svg{

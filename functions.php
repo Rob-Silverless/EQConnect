@@ -107,6 +107,17 @@ function eqconnect_manage_admin_bar(){
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('comments');
 }
+
+
+if(function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'site-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
  
 function eqconnect_remove_admin_bar() {
 	show_admin_bar(false);

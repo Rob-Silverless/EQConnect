@@ -42,7 +42,6 @@ jQuery(document).ready(function( $ ) {
 				"padding-top": navHeight + "px",
 				"padding-bottom": footerHeight + "px"
 			});
-			console.log('resized', navHeight, footerHeight, threePointsTop);
 		}
     });
 
@@ -228,9 +227,10 @@ $("#challenge2, #challenge3").css('top', threePointsTop);
 
 $('.legalInfo').hide();
 // Legal Information
-$('#privacy').on('click', function(e){
+$('.mandatory a').on('click', function(e){
 	e.preventDefault();
-	$('.legalInfo').fadeIn();
+	var modalId = $(this).attr('data-modal');
+	$('#' + modalId).fadeIn();
 })
 
 $('.legalOverlay, .legalInfo .close').on('click', function(e){
