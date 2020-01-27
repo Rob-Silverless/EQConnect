@@ -1,4 +1,4 @@
-<div class="section" id="contact">
+<div class="section fp-auto-height-responsive" id="contact">
 	<div class="container cols-12-12 cols-md-24-24 align-vert-c animateSection">
 		<div class="col">
 			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>

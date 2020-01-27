@@ -1,4 +1,4 @@
-<div class="section" id="awarenessSection">
+<div class="section fp-auto-height-responsive" id="awarenessSection">
 	<div class="container cols-12-12 cols-xl-15-9 cols-md-24-24 align-vert-c">
 		<div class="col" id="awarenessSectionContainer">
 			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>

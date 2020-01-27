@@ -179,18 +179,20 @@ a{
             overflow:visible;
         }
         #arrow-top{
+            transform: translate(-27.244px, 0px) !important;
             transition:$fastEffect;
         }
         #arrow-bottom{
             transition:$fastEffect;
+            transform: translate(-27.237px, -191.064px) !important;
         }
         &:hover{
             #arrow-top{
-                transform: translate(-27.244px, -6px);
+                transform: translate(-27.244px, -6px) !important;
                 transition:$fastEffect;
             }
             #arrow-bottom{
-                transform: translate(-27.237px, -185.064px);
+                transform: translate(-27.237px, -185.064px) !important;
                 transition:$fastEffect;
             }
             transition:$fastEffect;

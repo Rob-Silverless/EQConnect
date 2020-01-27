@@ -1,4 +1,4 @@
-<div class="section challenge" id="pilotPartners">
+<div class="section challenge fp-auto-height-responsive" id="pilotPartners">
 	<div class="container cols-24 align-vert-c animateSection">
 		<div class="col ">
 			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>

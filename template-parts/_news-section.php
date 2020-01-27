@@ -1,4 +1,4 @@
-<div class="section news" id="news">
+<div class="section news fp-auto-height-responsive" id="news">
 	<div class="container cols-24">
 		<div class="col">
 			<div class="h1" data-delay="500"><?php the_sub_field('title')?></div>

@@ -29,10 +29,16 @@
 	}
 }
 @each $name, $size in $breakpoints {
+	.show-#{$name}{
+		display: none !important;
+	}
 	
 	@media (max-width: #{$size}) {
         .hide-#{$name}{
 			display: none
+		}
+		.show-#{$name}{
+			display: block !important
 		}
 	}
 }
@@ -162,7 +168,7 @@ h5, .h5{font-size:rem-calc(18);}
 h6, .h6{font-size:rem-calc(14);}
 
 body {
-  font-size: 0.65em;
+  font-size: rem-calc(14);
 }
 
 .three-points{

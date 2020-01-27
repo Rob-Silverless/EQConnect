@@ -1,4 +1,4 @@
-<div class="section three-points hide-md" id="challenge1">
+<div class="section three-points hide-md fp-auto-height-responsive" id="challenge1">
 	<div class="container">
 		<div class="col">
 			<h1 class="slide-up" data-delay="500"><?php the_sub_field('title');?></h1>
@@ -35,7 +35,7 @@
 </div>
 
 
-<div class="section three-points hide-md" id="challenge2">
+<div class="section three-points hide-md fp-auto-height-responsive" id="challenge2">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
@@ -52,10 +52,10 @@
 			</div>
 		</div>
 		<div class="col">
-			<div class="three-points-number slow-fade" data-delay="500">
+			<div class="three-points-number slow-fade" data-delay="100">
 				2
 			</div>
-			<div class="slide-up animText"  data-delay="1000"  data-speed="5">
+			<div class="slide-up animText"  data-delay="600"  data-speed="5">
 				<?php the_sub_field('second_block')?>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 </div>
 
 
-<div class="section three-points" id="challenge3">
+<div class="section three-points fp-auto-height-responsive" id="challenge3">
 	<div class="container">
 		<div class="col">
 			<h1><?php the_sub_field('title');?></h1>
@@ -99,10 +99,10 @@
 			</div>
 		</div>
 		<div class="col">
-			<div class="three-points-number slow-fade" data-delay="500">
+			<div class="three-points-number slow-fade" data-delay="100">
 				3
 			</div>
-			<div class="slide-up animText"  data-delay="1000"  data-speed="5">
+			<div class="slide-up animText"  data-delay="600"  data-speed="5">
 				<?php the_sub_field('third_block')?>
 			</div>
 		</div>

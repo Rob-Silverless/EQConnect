@@ -1,7 +1,7 @@
 <?php 
 	$image = get_sub_field('background-image');
 ?>
-<div class="section testimonial slow-fade" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="testimonials">
+<div class="section testimonial slow-fade fp-auto-height-responsive" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="testimonials">
 	<div class="container cols-offset-6-12 cols-xl-offset-3-18  cols-sm-offset-1-22 align-vert-c">
 		<div class="col testimonial-container align-center">
 			<div class="h1 ">

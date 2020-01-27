@@ -1,7 +1,7 @@
 <?php 
 	$image = get_sub_field('background_image');
 ?>
-<div class="section data slow-fade" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="dataPrivacy">
+<div class="section data slow-fade fp-auto-height-responsive" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="dataPrivacy">
 	<div class="container cols-18 cols-md-offset-4-16 cols-sm-offset-2-20">
 		<div class="col owl-carousel owl-theme" id="dataCarousel">
 		<?php if( have_rows('carousel') ):

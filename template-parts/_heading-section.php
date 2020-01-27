@@ -1,4 +1,4 @@
-<div class="section heading" id="home">
+<div class="section heading fp-auto-height-responsive" id="home">
 	<div class="container cols-13-11 cols-xl-15-9 cols-md-24-24 align-vert-c">
 		<div class="col headerContent">
 			<?php 
