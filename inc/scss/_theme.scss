@@ -283,6 +283,11 @@ a{
     }
 }
 .news{
+    #news-carousel{
+        .owl-item{
+            padding-bottom: rem-calc(75);
+        }
+    }
     .news-image{
         width: 100%;
         padding-bottom: 75%;
@@ -418,6 +423,11 @@ a{
     color:$brand-secondary;
     font-size:rem-calc(12);
     font-style:italic;
+}
+#who, #news{
+    .h1{
+        padding-top:rem-calc(75);
+    }
 }
 .who-we-are{
     position:relative;

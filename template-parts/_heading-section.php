@@ -5,23 +5,23 @@
 				$fundedBy = get_sub_field('funded_by');
 			?>
 			<h1 class="slide-up" data-delay="500"><?php the_sub_field('heading')?></h1>
-			<h2 class="slide-up" data-delay="800"><?php the_sub_field('sub_heading')?></h2>
+			<h2 class="slide-up" data-delay="1000"><?php the_sub_field('sub_heading')?></h2>
 			<?php if( have_rows('content') ):
 				while( have_rows('content') ): the_row();?>
 				<div class="blockquote">
-					<div class="slide-up" data-delay="1000">
+					<div class="slide-up" data-delay="1500">
 						<?php the_sub_field('quote_content')?>
 					</div>
-					<span class="credit slide-up" data-delay="1800">
+					<span class="credit slide-up" data-delay="2000">
 						<?php the_sub_field('credit')?>
 					</span>
 				</div>
-				<div class="funded slide-up" data-delay="1500">
+				<div class="funded slide-up" data-delay="2500">
 					<img src="<?php echo esc_url($fundedBy['url']); ?>" />
 				</div>
 			<?php endwhile; endif;?>
 		</div>
-		<div class="col headerImage slow-fade" data-delay="1800">
+		<div class="col headerImage slow-fade" data-delay="4000">
 			<?php 
 				$image = get_sub_field('image');
 			?>

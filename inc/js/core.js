@@ -10,6 +10,8 @@ jQuery(document).ready(function( $ ) {
     	//fadingEffect: 'section',
     	responsiveWidth: 1200,
         scrollOverflow: true,
+        fixedElements: '#nav, .footer',
+		verticalCentered: true,
     	anchors:['top', 'awareness', 'challengeOne', 'challengeTwo', 'challengeThree', 'core', 'newsInfo', 'partners', 'testimony', 'whoWe', 'contactUs'],
     	afterLoad: function (origin, anchorLink, index){
     		var currentId = $(anchorLink.item).attr('id');
@@ -17,8 +19,9 @@ jQuery(document).ready(function( $ ) {
     		$(currentItem).each(function(e, i) {
     			var delay = $(this).attr('data-delay');
     			if($(this).hasClass('animTextSpan')){
-    				var speed = $(this).parent().attr('data-speed');
-    				delay = $(this).parent().attr('data-delay')*(e/speed)
+    				var speed = $(this).parents('.animText').attr('data-speed');
+    				delay = $(this).parents('.animText').attr('data-delay')*(e/speed)
+    				console.log(speed, delay)
     			} else {
     				delay
     			}
@@ -26,64 +29,16 @@ jQuery(document).ready(function( $ ) {
 					$(i).addClass('active');
 				}, delay)
 			});
-			var navHeight = $("nav").height();
-			var footerHeight = $("footer").height();
-			$(".section > div").css({
-				"padding-top": navHeight + "px",
-				"padding-bottom": footerHeight + "px"
-			});
     	},
     	afterResize: function(width, height){
 			var threePointsTop = $("#challenge1").offset().top;
 			$("#challenge2, #challenge3").css('top', threePointsTop);
-			var navHeight = $("nav").height();
-			var footerHeight = $("footer").height();
-			$(".section > div").css({
-				"padding-top": navHeight + "px",
-				"padding-bottom": footerHeight + "px"
-			});
 		}
     });
 
     $('#mouse-scroll-anchor').on('click', function(){
       fullpage_api.moveSectionDown();
     });
-
-    //var position = $(window).scrollTop(); 
-
-	// should start at 0
-
-	/*$(window).scroll(function() {
-	    var scroll = $(window).scrollTop();
-	    if(scroll > position) {
-	        console.log('scrollDown');
-	    } else {
-	         console.log('scrollUp');
-	    }
-	    position = scroll;
-	});*/
-
-
-/* ADD CLASS ON LOAD*/
-
-    /*$("html").delay(1500).queue(function(next) {
-        $(this).addClass("loaded");
-
-        next();
-    });*/
-
-//Smooth Scroll
-
-    /*$('nav a, a.button, a.next-section').click(function(){
-	    if($(this).attr('href') != "#") {
-	        $('html, body').animate({
-	            scrollTop: $( $(this).attr('href') ).offset().top -100
-	        }, 500);
-	        return false;
-	    }
-    });*/
-
-/* LOAD MAP */
 
 /* CLASS AND FOCUS ON CLICK */
 
@@ -178,10 +133,6 @@ $("#dataCarousel").owlCarousel({
     nav:false,
     loop:true,
     margin:20,
-    autoplay: true,
-    autoplayHoverPause: true,
-    autoplayTimeout:7000,
-    autoplaySpeed: 2000,
     dotsEach:true,
 })
 
@@ -213,13 +164,24 @@ $('.individual .close').on('click', function(e){
 
 $('.animText').each(function(){
 	var animText = $(this);
-	var spanInserted = $(animText).text().split(" ");
-	$(animText).empty();
-	$.each(spanInserted, function(i, v) {
-	    $(animText).append($("<span class='animTextSpan slide-up'>").text(v));
-	});
-});
+	var spanInserted = $(animText).text().split(" ").join(" </span><span class='line'>");
+	var wrapped = ("<span class='line slide-up'>").concat(spanInserted, "</span>");
+	$(this).html(wrapped);
+	var refPos = $('.animText span.line:first-child').position().top;
+	var newPos;
 
+$('.animText span.line').each(function(index) {
+    newPos = $(this).position().top   
+    if (index == 0){
+       return;
+    }
+    if (newPos == refPos){
+        $(this).prepend($(this).prev().text() + " ").addClass('animTextSpan slide-up');
+        $(this).prev().remove();
+    } 
+    refPos = newPos;
+});
+});
 //Three Points Sections
 var threePointsTop = $("#challenge1").offset().top;
 $("#challenge2, #challenge3").css('top', threePointsTop);

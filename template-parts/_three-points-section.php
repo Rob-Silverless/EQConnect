@@ -1,8 +1,8 @@
 <div class="section three-points hide-md fp-auto-height-responsive" id="challenge1">
 	<div class="container">
 		<div class="col">
-			<h1 class="slide-up" data-delay="500"><?php the_sub_field('title');?></h1>
-			<h2 class="slide-up" data-delay="800"><?php the_sub_field('sub_title');?></h2>
+			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title');?></div>
+			<div class="h2 slide-up" data-delay="800"><?php the_sub_field('sub_title');?></div>
 		</div>
 	</div>
 	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">
@@ -38,8 +38,8 @@
 <div class="section three-points hide-md fp-auto-height-responsive" id="challenge2">
 	<div class="container">
 		<div class="col">
-			<h1><?php the_sub_field('title');?></h1>
-			<h2><?php the_sub_field('sub_title');?></h2>
+			<div class="h1"><?php the_sub_field('title');?></div>
+			<div class="h2"><?php the_sub_field('sub_title');?></div>
 		</div>
 	</div>
 	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">
@@ -77,8 +77,8 @@
 <div class="section three-points fp-auto-height-responsive" id="challenge3">
 	<div class="container">
 		<div class="col">
-			<h1><?php the_sub_field('title');?></h1>
-			<h2><?php the_sub_field('sub_title');?></h2>
+			<div class="h1"><?php the_sub_field('title');?></div>
+			<div class="h2"><?php the_sub_field('sub_title');?></div>
 		</div>
 	</div>
 	<div class="container cols-8 cols-md-24 cols-md-offset-6-12 cols-sm-offset-2-20 grid-gap three-points-content">

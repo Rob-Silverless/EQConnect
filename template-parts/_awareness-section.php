@@ -3,7 +3,7 @@
 		<div class="col" id="awarenessSectionContainer">
 			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>
 			<div class="h2 slide-up" data-delay="800"><?php the_sub_field('sub_title')?></div>
-			<div class="slide-up animText" data-delay="1000" data-speed="8">
+			<div class="slide-up animText" data-delay="1000" data-speed="4">
 				<?php the_sub_field('content')?>
 			</div>
 		</div>
