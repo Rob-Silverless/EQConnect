@@ -3,14 +3,14 @@
 		<div class="col">
 			<div class="container cols-14 cols-xl-24 content">
 				<div class="col">
-					<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>
-					<div class="h2 slide-up" data-delay="800"><?php the_sub_field('sub_title')?></div>
+					<h4 class="slide-up heading heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500"><?php the_sub_field('title')?></h4>
+					<h5 class="slide-up heading heading__lg heading__bold heading__remove-margin-top heading__caps" data-delay="800"><?php the_sub_field('sub_title')?></h5>
 					<div class="slide-up" data-delay="1000">
 						<?php the_sub_field('content')?>
 					</div>
 				</div>
 			</div>
-			<div class="container cols-8 cols-md-12 cols-sm-24">
+			<div class="container cols-8 cols-md-12 cols-sm-24 people">
 				<?php if( have_rows('person') ):
 				while( have_rows('person') ): the_row();?>
 					<div class="col person slow-fade" data-individual="individual-<?php echo get_row_index(); ?>" data-delay="<?php echo 1200 + (200* get_row_index()); ?>">

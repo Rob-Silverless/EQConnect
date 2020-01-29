@@ -98,6 +98,10 @@ img {
 .heading {
     font-family: $brand-font;
     font-weight: 100;
+    svg {
+        overflow:visible;
+        max-height:rem-calc(48);
+    }
 
     &__alt {
         font-family: $supporting-font;
@@ -116,7 +120,13 @@ img {
     }
 
     &__alt-color {
-      color: $brand-dark-grey;
+      color: $brand-secondary;
+      svg{
+        text{
+            fill:$brand-secondary;
+            stroke:$brand-secondary;
+        }
+      }
     }
 
     &__seperator {
@@ -148,14 +158,18 @@ img {
             }
         }
     }
+    &__xxl {
+        font-size:rem-calc(150);
+    }
 
     &__xl {
-        font-size: 4em;
-        line-height: 1em;
+        font-size: rem-calc(48);
+        line-height: rem-calc(94);
     }
 
     &__lg {
-        font-size: 3em;
+        font-size: rem-calc(40);
+        line-height: rem-calc(60);
     }
 
     &__md {
@@ -171,7 +185,54 @@ img {
         font-size: 0.75em;
         color: $brand-mid-grey;
     }
+    &__bold{
+        font-weight:700;
+    }
+    &__remove-margin-top{
+        margin-top:0;
+    }
+    &__remove-margin-bottom{
+        margin-bottom:0;
+    }
+    &__animate{
+        svg {
+          overflow:visible;
+          max-height:rem-calc(48);
+          .animate-outline {
+            display: block;
+            font-size:rem-calc(48);
+            stroke-dashoffset: 10em;
+            stroke-dasharray: 10em;
+            background-clip: text;
+          }
+        }
 
+        @keyframes draw {
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        @-webkit-keyframes draw {
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        @-moz-keyframes draw {
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+    }
+    &__xxl {
+        svg{
+            max-height:none;
+            .animate-outline{
+                font-size:rem-calc(180);
+            }
+        }
+    }
 }
 
 [type=button],

@@ -1,8 +1,8 @@
 <div class="section news fp-auto-height-responsive" id="news">
 	<div class="container cols-24">
 		<div class="col">
-			<div class="h1" data-delay="500"><?php the_sub_field('title')?></div>
-			<div class="h2" data-delay="800"><?php the_sub_field('sub_title')?></div>
+			<div class="slide-up heading heading__xl heading__outline heading__bold heading__caps heading__remove-margin-bottom news-header" data-delay="500"><?php the_sub_field('title')?></div>
+			<h4 class="slide-up heading heading__lg heading__bold heading__remove-margin-top" data-delay="800"><?php the_sub_field('sub_title')?></h4>
 		</div>
 	</div>
 	<div class="container cols-24 cols-xl-offset-2-20 cols-sm-offset-4-16">

@@ -1,25 +1,7 @@
 /*! == THEME STYLES == */
 /*===========GLOBAL==========*/
-h1,
-h2,
-.h1,
-.h2{
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom:0;
-    margin-top:0;
-}
-h1, .h1{
-    -webkit-text-stroke: 0.25px white;
-    color: transparent;
-}
-h2{
-    margin-bottom:rem-calc(50);
-}
-.h1,
-.h2{
-    margin-bottom: rem-calc(30);
-    line-height: 1;
+.no-scroll{
+    overflow:hidden;
 }
 /*===========HEADER==========*/
 #eq_connect_logo{
@@ -164,7 +146,7 @@ a{
     }
 }
 /*===========BODY==========*/
-.heading{
+#home{
     position:relative;
     #mouse-scroll-anchor{
         position:absolute;
@@ -235,12 +217,6 @@ a{
     .grid-gap{
         grid-gap:rem-calc(50);
     }
-    .three-points-number{
-        font-size:rem-calc(150);
-        -webkit-text-stroke: 1px $brand-secondary;
-        color: transparent;
-
-    }
     .three-points-content{
         padding-bottom:rem-calc(50);
     }
@@ -283,9 +259,12 @@ a{
     }
 }
 .news{
+    .news-header{
+        padding-top:rem-calc(100);
+    }
     #news-carousel{
         .owl-item{
-            padding-bottom: rem-calc(75);
+            padding-bottom: rem-calc(150);
         }
     }
     .news-image{
@@ -424,15 +403,18 @@ a{
     font-size:rem-calc(12);
     font-style:italic;
 }
-#who, #news{
-    .h1{
-        padding-top:rem-calc(75);
+#who{
+    h4{
+        padding-top:rem-calc(100);
     }
 }
 .who-we-are{
     position:relative;
     .content{
         padding-bottom:rem-calc(20);
+    }
+    .people{
+        padding-bottom:rem-calc(200);
     }
     .person{
         padding-bottom:rem-calc(20);

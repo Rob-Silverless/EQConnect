@@ -18,10 +18,9 @@ jQuery(document).ready(function( $ ) {
     		var currentItem = $('#' + currentId + ' .slide-up, #' + currentId + ' .slide-down, #' + currentId + ' .slide-right, #' + currentId + ' .slow-fade')
     		$(currentItem).each(function(e, i) {
     			var delay = $(this).attr('data-delay');
-    			if($(this).hasClass('animTextSpan')){
-    				var speed = $(this).parents('.animText').attr('data-speed');
-    				delay = $(this).parents('.animText').attr('data-delay')*(e/speed)
-    				console.log(speed, delay)
+    			if($(this).hasClass('heading__animate')){
+    				var animationDelay = delay/1000
+    				$(this).find('text').css('animation', 'draw 5s ' + animationDelay + 's 1 forwards ease-in-out');
     			} else {
     				delay
     			}
@@ -162,7 +161,7 @@ $('.individual .close').on('click', function(e){
 
 // Text Animation
 
-$('.animText').each(function(){
+/*$('.animText').each(function(){
 	var animText = $(this);
 	var spanInserted = $(animText).text().split(" ").join(" </span><span class='line'>");
 	var wrapped = ("<span class='line slide-up'>").concat(spanInserted, "</span>");
@@ -181,7 +180,8 @@ $('.animText span.line').each(function(index) {
     } 
     refPos = newPos;
 });
-});
+});*/
+
 //Three Points Sections
 var threePointsTop = $("#challenge1").offset().top;
 $("#challenge2, #challenge3").css('top', threePointsTop);
@@ -193,11 +193,15 @@ $('.mandatory a').on('click', function(e){
 	e.preventDefault();
 	var modalId = $(this).attr('data-modal');
 	$('#' + modalId).fadeIn();
+	$('body').addClass('no-scroll');
+	fullpage_api.setAllowScrolling(false);
 })
 
 $('.legalOverlay, .legalInfo .close').on('click', function(e){
 	e.preventDefault();
 	$('.legalInfo').fadeOut();
+	$('body').removeClass('no-scroll');
+	fullpage_api.setAllowScrolling(true);
 });
 
 });//Don't remove ---- end of jQuery wrapper

@@ -1,8 +1,8 @@
 <div class="section fp-auto-height-responsive" id="contact">
 	<div class="container cols-12-12 cols-md-24-24 align-vert-c animateSection">
 		<div class="col">
-			<div class="h1 slide-up" data-delay="500"><?php the_sub_field('title')?></div>
-			<div class="h2 slide-up" data-delay="800"><?php the_sub_field('sub_title')?></div>
+			<h4 class="slide-up heading heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom"  data-delay="500"><?php the_sub_field('title')?></h4>
+			<h5 class="slide-up heading heading__lg heading__bold heading__remove-margin-top heading__caps" data-delay="800"><?php the_sub_field('sub_title')?></h5>
 			<div class="slide-up animText" data-delay="1000" data-delay="6">
 				<?php the_sub_field('content')?>
 			</div>
