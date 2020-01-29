@@ -416,6 +416,7 @@ a{
     }
     .people{
         padding-bottom:rem-calc(200);
+        position:relative;
     }
     .person{
         padding-bottom:rem-calc(20);
@@ -429,6 +430,10 @@ a{
     }
     .person_profile{
         padding-bottom:rem-calc(10);
+        max-width:rem-calc(75);
+        img{
+            border-radius:50%;
+        }
     }
     .person_name{
         line-height: rem-calc(20)
@@ -443,6 +448,7 @@ a{
     .individual{
         position:fixed;
         left:0;
+        top:50%;
         width:100%;
         background-color:rgba(black, 0.8);
         transform:translateY(-50%);
@@ -495,6 +501,8 @@ a{
             }
             .role-description{
                 font-size:rem-calc(14);
+                max-height:rem-calc(150);
+                overflow-y:scroll;
                 ul{
                     list-style:none;
                     padding-left:rem-calc(10);

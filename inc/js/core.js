@@ -150,9 +150,8 @@ $(this).children('span').text($(this).index()+1);
 // Who we are section
 
 $('.person').on('click', function(){
-	elementOffset = $(this).offset().top;
 	var personId = $(this).attr('data-individual');
-	$('#' + personId).css('top', elementOffset).fadeIn();
+	$('#' + personId).fadeIn();
 });
 $('.individual .close').on('click', function(e){
 	e.preventDefault();
