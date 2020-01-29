@@ -3,7 +3,11 @@
 		<div class="col">
 			<div class="container cols-14 cols-xl-24 content">
 				<div class="col">
-					<h4 class="slide-up heading heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500"><?php the_sub_field('title')?></h4>
+					<h4 class="slide-up heading heading__animate heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
+						<svg>
+							<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('title')?></text>
+						</svg>
+					</h4>
 					<h5 class="slide-up heading heading__lg heading__bold heading__remove-margin-top heading__caps" data-delay="800"><?php the_sub_field('sub_title')?></h5>
 					<div class="slide-up" data-delay="1000">
 						<?php the_sub_field('content')?>
