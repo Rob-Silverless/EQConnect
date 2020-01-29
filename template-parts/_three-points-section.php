@@ -1,4 +1,4 @@
-<div class="section three-points hide-md fp-auto-height-responsive" id="challenge1">
+<div class="section three-points hide-md" id="challenge1">
 	<div class="container">
 		<div class="col">
 			<div class="slide-up heading heading__xl heading__animate heading__bold heading__caps heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">

@@ -1,11 +1,11 @@
 <?php 
 	$image = get_sub_field('background_image');
 ?>
-<div class="section data slow-fade fp-auto-height-responsive" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="dataPrivacy">
+<div class="section data slow-fade" style="background-image:url(<?php echo esc_url($image['url']); ?>)" id="dataPrivacy">
 	<div class="container cols-18 cols-md-offset-4-16 cols-sm-offset-2-20">
 		<div class="col">
 			<h2 class="heading heading__xl heading__outline heading__bold heading__animate heading__remove-margin-top heading__remove-margin-bottom slow-fade" data-delay="0">
-				<svg>
+				<svg class="sm-overide">
 					<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('title')?></text>
 				</svg>
 			</h2>

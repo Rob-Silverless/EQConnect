@@ -50,12 +50,30 @@
 @media only screen and (max-width: 1200px) {
 
 /*---GLOBALS---*/ 
-h1, .h1{font-size:rem-calc(36);}
-h2, .h2{font-size:rem-calc(32);}
-h3, .h3{font-size:rem-calc(28);}
-h4, .h4{font-size:rem-calc(24);}
-h5, .h5{font-size:rem-calc(20);}
-h6, .h6{font-size:rem-calc(16);}
+.heading{
+    &__xl {
+    }
+
+    &__lg {
+    }
+    &__animate{
+        svg {
+          overflow:visible;
+          max-height:rem-calc(40);
+          .animate-outline {
+            font-size:rem-calc(40);
+          }
+        }
+    }
+    &__xxl {
+        svg{
+            max-height:none;
+            .animate-outline{
+                font-size:rem-calc(180);
+            }
+        }
+    }
+}
 
 .three-points{
 	.grid-gap{
@@ -160,12 +178,54 @@ body {
 @media only screen and (max-width: 768px) {
 
 /*---GLOBALS---*/
-h1, .h1{font-size:rem-calc(28);}
-h2, .h2{font-size:rem-calc(26);}
-h3, .h3{font-size:rem-calc(22);}
-h4, .h4{font-size:rem-calc(20);}
-h5, .h5{font-size:rem-calc(18);}
-h6, .h6{font-size:rem-calc(14);}
+.heading{
+    &__xl {
+    	position:relative;
+    	min-height:rem-calc(60);
+        svg {
+			position:absolute;
+			left:50%;
+			top:0;
+			overflow:visible;
+			max-height:rem-calc(24);
+			.animate-outline {
+				font-size:rem-calc(24);
+				text-anchor:middle;
+			}
+			&.sm-overide{
+				position:relative;
+				left:0;
+				padding-bottom:40px;
+				.animate-outline {
+					text-anchor:start;
+				}
+			}
+        }
+    }
+
+    &__lg {
+        font-size:rem-calc(24);
+        line-height:rem-calc(30);
+    }
+    &__animate{
+    	
+    }
+    &__xxl {
+    	position:relative;
+    	min-height:rem-calc(140);
+        svg {
+        	position:absolute;
+        	left:50%;
+        	top:0;
+	        overflow:visible;
+	        max-height:rem-calc(120);
+			.animate-outline {
+				font-size:rem-calc(120);
+				text-anchor:middle;
+			}
+        }
+    }
+}
 
 body {
   font-size: rem-calc(14);
@@ -188,6 +248,12 @@ body {
 			padding:rem-calc(20);
 		}
 	}
+	h4{
+		padding:0;
+	}
+}
+.news .news-header{
+	padding:0;
 }
 /*---HEADER---*/
 

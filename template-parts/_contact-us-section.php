@@ -1,4 +1,4 @@
-<div class="section fp-auto-height-responsive" id="contact">
+<div class="section" id="contact">
 	<div class="container cols-12-12 cols-md-24-24 align-vert-c animateSection">
 		<div class="col">
 			<h4 class="slide-up heading heading__animate heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">

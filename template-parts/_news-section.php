@@ -1,4 +1,4 @@
-<div class="section news fp-auto-height-responsive" id="news">
+<div class="section news" id="news">
 	<div class="container cols-24">
 		<div class="col">
 			<div class="slide-up heading heading__xl heading__outline heading__animate heading__bold heading__caps heading__remove-margin-bottom news-header" data-delay="500">

@@ -205,6 +205,14 @@ img {
             stroke-dasharray: 10em;
             background-clip: text;
           }
+          &.centredSvg{
+            position:absolute;
+            left:50%;
+            top:0;
+            .animate-outline {
+                text-anchor:middle;
+            }
+          }
         }
 
         @keyframes draw {

@@ -1,4 +1,4 @@
-<div class="section fp-auto-height-responsive" id="awarenessSection">
+<div class="section" id="awarenessSection">
 	<div class="container cols-12-12 cols-xl-15-9 cols-md-24-24 align-vert-c">
 		<div class="col" id="awarenessSectionContainer">
 			<h2 class="slide-up heading heading__xl heading__animate heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">

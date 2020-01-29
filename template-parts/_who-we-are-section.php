@@ -1,4 +1,4 @@
-<div class="section who-we-are fp-auto-height-responsive"  id="who">
+<div class="section who-we-are"  id="who">
 	<div class="container cols-16-8 cols-md-24-24 align-vert-c">
 		<div class="col">
 			<div class="container cols-14 cols-xl-24 content">

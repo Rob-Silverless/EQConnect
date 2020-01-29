@@ -159,29 +159,6 @@ $('.individual .close').on('click', function(e){
 	$('.individual').fadeOut();
 });
 
-// Text Animation
-
-/*$('.animText').each(function(){
-	var animText = $(this);
-	var spanInserted = $(animText).text().split(" ").join(" </span><span class='line'>");
-	var wrapped = ("<span class='line slide-up'>").concat(spanInserted, "</span>");
-	$(this).html(wrapped);
-	var refPos = $('.animText span.line:first-child').position().top;
-	var newPos;
-
-$('.animText span.line').each(function(index) {
-    newPos = $(this).position().top   
-    if (index == 0){
-       return;
-    }
-    if (newPos == refPos){
-        $(this).prepend($(this).prev().text() + " ").addClass('animTextSpan slide-up');
-        $(this).prev().remove();
-    } 
-    refPos = newPos;
-});
-});*/
-
 //Three Points Sections
 var threePointsTop = $("#challenge1").offset().top;
 $("#challenge2, #challenge3").css('top', threePointsTop);

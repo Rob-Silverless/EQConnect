@@ -1,4 +1,4 @@
-<div class="section challenge fp-auto-height-responsive" id="pilotPartners">
+<div class="section challenge" id="pilotPartners">
 	<div class="container cols-24 align-vert-c animateSection">
 		<div class="col ">
 			<h2 class="slide-up heading heading__animate heading__xl heading__outline heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
