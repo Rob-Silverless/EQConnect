@@ -475,9 +475,9 @@ a{
             max-width:rem-calc(800);
         }
         .image{
-            img{
-                min-width:100%;
-            }
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
         }
         .info{
             display:flex;
@@ -500,8 +500,6 @@ a{
                 font-size:rem-calc(14);
             }
             .role-description{
-                overflow-y:scroll;
-                max-height:rem-calc(150);
                 font-size:rem-calc(14);
                 ul{
                     padding-left:rem-calc(10);
@@ -525,7 +523,7 @@ a{
 
 // Animations
 #headerSpin{
-    animation:spin 60s linear infinite;
+    animation:spin 180s linear infinite;
 }
 @keyframes spin { 
     0% {

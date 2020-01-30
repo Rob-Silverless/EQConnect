@@ -20,7 +20,7 @@ jQuery(document).ready(function( $ ) {
     			var delay = $(this).attr('data-delay');
     			if($(this).hasClass('heading__animate')){
     				var animationDelay = delay/1000
-    				$(this).find('text').css('animation', 'draw 5s ' + animationDelay + 's 1 forwards ease-in-out');
+    				$(this).find('text').css('animation', 'draw 5s ' + animationDelay + 's 1 forwards ease-out');
     			} else {
     				delay
     			}
