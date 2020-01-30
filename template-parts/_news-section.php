@@ -1,7 +1,7 @@
 <div class="section news" id="news">
 	<div class="container cols-24">
 		<div class="col">
-			<div class="slide-up heading heading__xl heading__outline heading__animate heading__bold heading__caps heading__remove-margin-bottom news-header" data-delay="500">
+			<div class="slow-fade heading heading__xl heading__outline heading__animate heading__bold heading__caps heading__remove-margin-bottom news-header" data-delay="500">
 				<svg>
 					<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('title')?></text>
 				</svg>

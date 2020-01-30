@@ -1,7 +1,7 @@
 <div class="section" id="awarenessSection">
 	<div class="container cols-12-12 cols-xl-15-9 cols-md-24-24 align-vert-c">
 		<div class="col" id="awarenessSectionContainer">
-			<h2 class="slide-up heading heading__xl heading__animate heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
+			<h2 class="slow-fade heading heading__xl heading__animate heading__bold heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
 				<svg>
 					<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('title')?></text>
 				</svg>

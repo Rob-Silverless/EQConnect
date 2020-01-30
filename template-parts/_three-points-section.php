@@ -1,7 +1,7 @@
 <div class="section three-points hide-md" id="challenge1">
 	<div class="container">
 		<div class="col">
-			<div class="slide-up heading heading__xl heading__animate heading__bold heading__caps heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
+			<div class="slow-fade heading heading__xl heading__animate heading__bold heading__caps heading__remove-margin-top heading__remove-margin-bottom" data-delay="500">
 				<svg>
 					<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('title')?></text>
 				</svg>

@@ -4,7 +4,7 @@
 			<?php 
 				$fundedBy = get_sub_field('funded_by');
 			?>
-			<h1 class="heading heading__xl heading__animate heading__bold heading__remove-margin-top heading__remove-margin-bottom slide-up" data-delay="500">
+			<h1 class="heading heading__xl heading__animate heading__bold heading__remove-margin-top heading__remove-margin-bottom slow-fade" data-delay="500">
 				<svg height="48">
 					<text x="0" y="60" fill="#fff" fill-opacity="0" stroke="#fff" class="animate-outline" stroke-width="0.3"><?php the_sub_field('heading')?></text>
 				</svg>
